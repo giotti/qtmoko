@@ -177,7 +177,7 @@ void QX::runApp(QString filename, bool rotate)
         xprocess->setProcessChannelMode(QProcess::ForwardedChannels);
         QStringList args;
         args.append("-hide-cursor");
-        args.append("vt7");
+        args.append("vt4");
         args.append("-dpi");
         args.append("128");
         xprocess->start("X", args);
