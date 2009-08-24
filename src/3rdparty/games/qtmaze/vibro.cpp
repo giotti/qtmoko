@@ -40,6 +40,9 @@ int timer_set=0;
 
 int init_vibro()
 {
+    fvibro = fopen("/sys/class/leds/gta02:vibrator/brightness", "w");
+    if (fvibro != NULL) return 0;
+
     fvibro = fopen("/sys/class/leds/neo1973:vibrator/brightness", "w");
     if (fvibro != NULL) return 0;
 
