@@ -207,7 +207,7 @@ void NeoHardware::shutdownRequested()
     QFile powerFile;
     QFile btPower;
 
-	if (QFileInfo("/sys/bus/platform/devices/gta02-pm-gsm.0/power_on").exists())
+	if (QFileInfo("/sys/bus/platform/devices/gta02-pm-gsm.0/power_on").exists()) {
         powerFile.setFileName("/sys/bus/platform/devices/gta02-pm-gsm.0/power_on");
         btPower.setFileName("/sys/bus/platform/devices/gta02-pm-bt.0/power_on");
     }
