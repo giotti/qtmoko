@@ -1483,7 +1483,7 @@ setup(void) {
 	XSetWindowAttributes wa;
 
 	/* clean up any zombies immediately */
-	sigchld(0);
+        //sigchld(0);
 
 	/* init screen */
 	screen = DefaultScreen(dpy);
@@ -2005,12 +2005,9 @@ zoom(const Arg *arg) {
 }
 
 void
-wm_start() {
-	if(!setlocale(LC_CTYPE, "") || !XSupportsLocale())
-		fputs("warning: no locale support\n", stderr);
-	if(!(dpy = XOpenDisplay(NULL)))
-		die("dwm: cannot open display\n");
-	checkotherwm();
+wm_start(Display *xdpy) {
+        dpy = xdpy;
+        //checkotherwm();
 	setup();
         scan();
 }
