@@ -1391,12 +1391,15 @@ restack(Monitor *m) {
 void
 wm_process_events(void) {
 	XEvent ev;
+        int num;
 
-	/* main event loop */
-	XSync(dpy, False);
-        if(!XNextEvent(dpy, &ev))
+        XSync(dpy, False);
+        num = XPending(dpy);
+        while(num > 0 && !XNextEvent(dpy, &ev)) {
 		if(handler[ev.type])
 			handler[ev.type](&ev); /* call handler */
+                num--;
+        }
 }
 
 void
