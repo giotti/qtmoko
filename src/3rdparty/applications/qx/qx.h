@@ -41,6 +41,11 @@
 #include <sys/ioctl.h>
 #include <X11/Xlib.h>
 
+extern	"C" {
+extern void wm_start();
+extern void wm_stop();
+extern void wm_process_events();
+}
 
 class QX : public QWidget
 {
@@ -111,6 +116,7 @@ private slots:
     //void scummvmClicked();
     void keyPress(QKeyEvent *);
     void keyRelease(QKeyEvent *);
+    void processWmEvents();
     void quitClicked();
     void resumeApp();
     void processFinished(int exitCode, QProcess::ExitStatus exitStatus);

@@ -123,7 +123,7 @@ QX::QX(QWidget *parent, Qt::WFlags f)
     BuildMenu();
     favouritesAction->setChecked(true);
 
-    lineEdit = new QLineEdit("terminal.sh", this);
+    lineEdit = new QLineEdit("xterm", this);
 
     bOk = new QPushButton(this);
     bOk->setMinimumWidth(100);
@@ -302,6 +302,7 @@ void QX::stopX()
         XCloseDisplay(dpy);
         dpy = NULL;
     }
+    wm_stop();
     if(xprocess == NULL)
     {
         return;
@@ -367,6 +368,9 @@ void QX::runApp(QString filename, QString applabel, bool rotate)
     }
     fakeKey = fakekey_init(dpy);
 
+    wm_start();
+    QTimer::singleShot(1, this, SLOT(processWmEvents()));
+
     process = new QProcess(this);
     connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(processFinished(int, QProcess::ExitStatus)));
     process->setProcessChannelMode(QProcess::ForwardedChannels);
@@ -383,6 +387,12 @@ void QX::runApp(QString filename, QString applabel, bool rotate)
     }
 
     showScreen(QX::ScreenRunning);
+}
+
+void QX::processWmEvents()
+{
+    wm_process_events();
+    QTimer::singleShot(1, this, SLOT(processWmEvents()));
 }
 
 void QX::pauseApp()
