@@ -84,6 +84,7 @@ private:
     QProcess *xprocess;
     Display *dpy;
     FakeKey *fakeKey;
+    QTimer *wmTimer;
     RotateHelper *rotHelper;
     QString appName;
     bool rotate;

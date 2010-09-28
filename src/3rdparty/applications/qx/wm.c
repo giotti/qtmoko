@@ -1486,8 +1486,8 @@ setup(void) {
 	screen = DefaultScreen(dpy);
 	root = RootWindow(dpy, screen);
 	initfont(font);
-	sw = DisplayWidth(dpy, screen);
-	sh = DisplayHeight(dpy, screen);
+        sw = 480;
+        sh = 320;
 	bh = dc.h = dc.font.height + 2;
 	updategeom();
 	/* init atoms */
@@ -2002,7 +2002,7 @@ zoom(const Arg *arg) {
 }
 
 void
-wm_start(int argc, char *argv[]) {
+wm_start() {
 	if(!setlocale(LC_CTYPE, "") || !XSupportsLocale())
 		fputs("warning: no locale support\n", stderr);
 	if(!(dpy = XOpenDisplay(NULL)))

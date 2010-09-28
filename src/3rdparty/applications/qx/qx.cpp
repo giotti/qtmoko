@@ -167,6 +167,8 @@ QX::QX(QWidget *parent, Qt::WFlags f)
     process = NULL;
     xprocess = NULL;
     rotHelper = new RotateHelper(this, 0);
+    wmTimer = new QTimer(this);
+    connect(wmTimer, SIGNAL(timeout()), this, SLOT(processWmEvents()));
     screen = QX::ScreenMain;
 #if QTOPIA
     powerConstraint = QtopiaApplication::Disable;
@@ -302,6 +304,7 @@ void QX::stopX()
         XCloseDisplay(dpy);
         dpy = NULL;
     }
+    wmTimer->stop();
     wm_stop();
     if(xprocess == NULL)
     {
@@ -369,7 +372,7 @@ void QX::runApp(QString filename, QString applabel, bool rotate)
     fakeKey = fakekey_init(dpy);
 
     wm_start();
-    QTimer::singleShot(1, this, SLOT(processWmEvents()));
+    wmTimer->start(10);
 
     process = new QProcess(this);
     connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(processFinished(int, QProcess::ExitStatus)));
@@ -392,7 +395,6 @@ void QX::runApp(QString filename, QString applabel, bool rotate)
 void QX::processWmEvents()
 {
     wm_process_events();
-    QTimer::singleShot(1, this, SLOT(processWmEvents()));
 }
 
 void QX::pauseApp()
@@ -405,6 +407,7 @@ void QX::pauseApp()
     {
         system("xrandr -o 0");
     }
+    wmTimer->stop();
 
     system(QString("kill -STOP %1").arg(process->pid()).toAscii());
     if(xprocess)
@@ -421,6 +424,7 @@ void QX::resumeApp()
         system(QString("kill -CONT %1").arg(xprocess->pid()).toAscii());
     }
     system(QString("kill -CONT %1").arg(process->pid()).toAscii());
+    wmTimer->start(10);
     showScreen(QX::ScreenRunning);
 }
 
