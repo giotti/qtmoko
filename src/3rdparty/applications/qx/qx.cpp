@@ -371,7 +371,7 @@ void QX::runApp(QString filename, QString applabel, bool rotate)
     }
     fakeKey = fakekey_init(dpy);
 
-    wm_start();
+    wm_start(dpy);
     wmTimer->start(10);
 
     process = new QProcess(this);

@@ -7,7 +7,7 @@ AppRunningScreen::AppRunningScreen()
 void AppRunningScreen::showScreen()
 {
 #ifdef QTOPIA
-    // QtopiaApplication::setInputMethodHint(this, QtopiaApplication::AlwaysOn); // <-- enable later
+    QtopiaApplication::setInputMethodHint(this, QtopiaApplication::AlwaysOn); // <-- enable later
 #endif
     showMaximized();
     enterFullScreen();

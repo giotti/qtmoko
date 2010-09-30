@@ -42,7 +42,7 @@
 #include <X11/Xlib.h>
 
 extern	"C" {
-extern void wm_start();
+extern void wm_start(Display *);
 extern void wm_stop();
 extern void wm_process_events();
 }
