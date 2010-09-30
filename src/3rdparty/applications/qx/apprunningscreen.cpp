@@ -4,7 +4,7 @@ AppRunningScreen::AppRunningScreen()
 {
 }
 
-void AppRunningScreen::showScreen(bool kbd)
+void AppRunningScreen::showScreen(bool fullscreen, bool kbd)
 {
 #ifdef QTOPIA
     QtopiaApplication::setInputMethodHint
@@ -13,7 +13,7 @@ void AppRunningScreen::showScreen(bool kbd)
              QtopiaApplication::AlwaysOff);
 #endif
     showMaximized();
-    if(!kbd)
+    if(fullscreen)
     {
         enterFullScreen();
     }

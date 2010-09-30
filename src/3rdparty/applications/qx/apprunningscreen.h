@@ -24,7 +24,7 @@ class AppRunningScreen : public QWidget
 
 public:
     AppRunningScreen();
-    void showScreen(bool);
+    void showScreen(bool fullscreen, bool kbd);
     QPixmap pixmap;
 
 signals:

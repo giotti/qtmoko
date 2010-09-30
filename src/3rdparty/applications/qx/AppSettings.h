@@ -25,6 +25,7 @@ struct AppProfile
     bool rotate;
     bool gps;
     bool matchbox;
+    bool fullscreen;
 };
 
 class ProfileManager
@@ -51,6 +52,7 @@ class SettingsDialog : public QDialog
         QCheckBox *chb_rotate;
         QCheckBox *chb_gps;
         QCheckBox *chb_matchbox;
+        QCheckBox *chb_fullscreen;
         QPushButton *btn_save;
         ProfileManager *mngr;
         QString app;

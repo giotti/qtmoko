@@ -30,6 +30,7 @@ AppProfile ProfileManager::GetAppProfile(QString app)
     prof.rotate = profConf->value("rotate").toBool();
     prof.gps = profConf->value("gps").toBool();
     prof.matchbox = profConf->value("matchbox").toBool();
+    prof.fullscreen = profConf->value("fullscreen").toBool();
     profConf->endGroup();
     return prof;
 }
@@ -46,6 +47,7 @@ void ProfileManager::SaveAppProfile(QString app, AppProfile prof)
     profConf->setValue("rotate", prof.rotate);
     profConf->setValue("gps", prof.gps);
     profConf->setValue("matchbox", prof.matchbox);
+    profConf->setValue("fullscreen", prof.fullscreen);
     profConf->endGroup();
 }
 
@@ -68,6 +70,7 @@ SettingsDialog::SettingsDialog(QString appname, QWidget *parent) : QDialog(paren
     chb_rotate = new QCheckBox(this);
     chb_gps = new QCheckBox(this);
     chb_matchbox = new QCheckBox(this);
+    chb_fullscreen = new QCheckBox(this);
     btn_save = new QPushButton(this);
 
     QLabel *initLabel = new QLabel(this);
@@ -81,6 +84,7 @@ SettingsDialog::SettingsDialog(QString appname, QWidget *parent) : QDialog(paren
     chb_rotate->setText(tr("Rotate screen"));
     chb_gps->setText(tr("Enable GPS module"));
     chb_matchbox->setText(tr("Use Matchbox"));
+    chb_fullscreen->setText(tr("Fullscreen"));
 
     btn_save->setMinimumWidth(150);
     btn_save->setText(tr("Save"));
@@ -96,7 +100,8 @@ SettingsDialog::SettingsDialog(QString appname, QWidget *parent) : QDialog(paren
     grid->addWidget(chb_rotate,7,0,Qt::AlignCenter);
     grid->addWidget(chb_gps,8,0,Qt::AlignCenter);
     grid->addWidget(chb_matchbox,9,0,Qt::AlignCenter);
-    grid->addWidget(btn_save,10,0,Qt::AlignCenter);
+    grid->addWidget(chb_fullscreen,10,0,Qt::AlignCenter);
+    grid->addWidget(btn_save,11,0,Qt::AlignCenter);
 
     connect (btn_save,SIGNAL(clicked()),this,SLOT(save()));
 
@@ -114,6 +119,7 @@ SettingsDialog::SettingsDialog(QString appname, QWidget *parent) : QDialog(paren
     chb_rotate->setChecked(prof.rotate);
     chb_gps->setChecked(prof.gps);
     chb_matchbox->setChecked(prof.matchbox);
+    chb_fullscreen->setChecked(prof.fullscreen);
 }
 
 SettingsDialog::~SettingsDialog()
@@ -133,6 +139,7 @@ void SettingsDialog::save()
     prof.rotate = chb_rotate->isChecked();
     prof.gps = chb_gps->isChecked();
     prof.matchbox = chb_matchbox->isChecked();
+    prof.fullscreen = chb_fullscreen->isChecked();
 
     mngr->SaveAppProfile(app, prof);
 

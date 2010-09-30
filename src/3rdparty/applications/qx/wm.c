@@ -2006,7 +2006,7 @@ wm_start(Display *xdpy, int top, int width, int height) {
         dpy = xdpy;
         bh = top;
         sw = width;
-        sh = height + top;
+        sh = height;
         //checkotherwm();
 	setup();
         scan();

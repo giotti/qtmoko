@@ -250,7 +250,7 @@ void QX::showScreen(QX::Screen scr)
     }
     if(scr >= QX::ScreenFullscreen && this->screen < QX::ScreenFullscreen)
     {
-        appRunScr->showScreen(kbd);
+        appRunScr->showScreen(fullscreen, kbd);
         if(rotate)
         {
             //system("xrandr -o 1");
@@ -375,16 +375,24 @@ void QX::runApp(QString filename, QString applabel, bool rotate)
     fakeKey = fakekey_init(dpy);
 
     showScreen(QX::ScreenRunning);
-    //qDebug() << "appRunScr size: " << appRunScr->width() << "x" << appRunScr->height();
     QApplication::processEvents();
-
-    // Hack - if we have keyboard we dont have fullscreen now and we want apps
-    // to be started below qtopia status bar
-    int top = kbd ? 80 : 1;
 
     if(wm)
     {
-        wm_start(dpy, top, appRunScr->width(), appRunScr->height());
+        // Hack - if not in fullscreen we want apps to be started below qtopia
+        // status bar
+        int top = fullscreen ? 1 : 80;
+        int width = appRunScr->width();
+        int height = appRunScr->height();
+
+        if(fullscreen && kbd)
+        {
+            height -= 160;      // hack: if we run keyboard in fullscreen the height is 640 but should be less because of keyboard height
+        }
+
+        //qDebug() << " top=" << top << " appRunScr size: " << width << "x" << height;
+
+        wm_start(dpy, top, width, height);
         wmTimer->start(10);
     }
 
@@ -577,6 +585,7 @@ void QX::launch_clicked()
     QString cmd = entry.exec;
     this->wm = prof.wm;
     this->kbd = prof.kbd;
+    this->fullscreen = prof.fullscreen;
 
     if (prof.matchbox &&
             ((prof.wm) || (prof.kbd)))

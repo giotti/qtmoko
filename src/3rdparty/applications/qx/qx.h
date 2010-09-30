@@ -91,6 +91,7 @@ private:
     bool terminating;
     bool wm;
     bool kbd;
+    bool fullscreen;
 #if QTOPIA
     QtopiaApplication::PowerConstraint powerConstraint;
 #endif
