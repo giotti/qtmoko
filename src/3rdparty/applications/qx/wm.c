@@ -2005,8 +2005,10 @@ zoom(const Arg *arg) {
 }
 
 void
-wm_start(Display *xdpy) {
+wm_start(Display *xdpy, int scrWidth, int scrHeight) {
         dpy = xdpy;
+        sw = scrHeight;
+        sh = scrHeight;
         //checkotherwm();
 	setup();
         scan();

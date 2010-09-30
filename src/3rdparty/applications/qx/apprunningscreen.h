@@ -36,6 +36,7 @@ protected:
     void paintEvent(QPaintEvent *);
     void keyPressEvent(QKeyEvent *);
     void keyReleaseEvent(QKeyEvent *);
+    void resizeEvent(QResizeEvent *);
     void enterFullScreen();
 };
 

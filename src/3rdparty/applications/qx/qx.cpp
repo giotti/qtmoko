@@ -371,7 +371,14 @@ void QX::runApp(QString filename, QString applabel, bool rotate)
     }
     fakeKey = fakekey_init(dpy);
 
-    wm_start(dpy);
+    showScreen(QX::ScreenRunning);
+    for(int i = 0; i < 10; i++)
+    {
+        QApplication::processEvents();
+    }
+
+    qDebug() << "appRunScr size: " << appRunScr->width() << "x" << appRunScr->height();
+    wm_start(dpy, appRunScr->width(), appRunScr->height());
     wmTimer->start(10);
 
     process = new QProcess(this);
@@ -388,8 +395,6 @@ void QX::runApp(QString filename, QString applabel, bool rotate)
         QMessageBox::critical(this, tr("QX"), tr("Unable to start") + " " + filename);
         return;
     }
-
-    showScreen(QX::ScreenRunning);
 }
 
 void QX::processWmEvents()

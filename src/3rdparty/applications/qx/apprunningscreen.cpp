@@ -56,6 +56,11 @@ void AppRunningScreen::keyReleaseEvent(QKeyEvent *e)
     emit keyRelease(e);
 }
 
+void AppRunningScreen::resizeEvent(QResizeEvent * e)
+{
+    qDebug() << e->size().width() << "x" << e->size().height();
+}
+
 void AppRunningScreen::enterFullScreen()
 {
 #ifdef QTOPIA
