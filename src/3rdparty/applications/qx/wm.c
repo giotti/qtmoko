@@ -681,52 +681,52 @@ dirtomon(int dir) {
 
 void
 drawbar(Monitor *m) {
-	int x;
-	unsigned int i, occ = 0, urg = 0;
-	unsigned long *col;
-	Client *c;
-
-	for(c = m->clients; c; c = c->next) {
-		occ |= c->tags;
-		if(c->isurgent)
-			urg |= c->tags;
-	}
-	dc.x = 0;
-	for(i = 0; i < LENGTH(tags); i++) {
-		dc.w = TEXTW(tags[i]);
-		col = m->tagset[m->seltags] & 1 << i ? dc.sel : dc.norm;
-		drawtext(tags[i], col, urg & 1 << i);
-		drawsquare(m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
-		           occ & 1 << i, urg & 1 << i, col);
-		dc.x += dc.w;
-	}
-	dc.w = blw = TEXTW(m->ltsymbol);
-	drawtext(m->ltsymbol, dc.norm, False);
-	dc.x += dc.w;
-	x = dc.x;
-	if(m == selmon) { /* status is only drawn on selected monitor */
-		dc.w = TEXTW(stext);
-		dc.x = m->ww - dc.w;
-		if(dc.x < x) {
-			dc.x = x;
-			dc.w = m->ww - x;
-		}
-		drawtext(stext, dc.norm, False);
-	}
-	else
-		dc.x = m->ww;
-	if((dc.w = dc.x - x) > bh) {
-		dc.x = x;
-		if(m->sel) {
-			col = m == selmon ? dc.sel : dc.norm;
-			drawtext(m->sel->name, col, False);
-			drawsquare(m->sel->isfixed, m->sel->isfloating, False, col);
-		}
-		else
-			drawtext(NULL, dc.norm, False);
-	}
-	XCopyArea(dpy, dc.drawable, m->barwin, dc.gc, 0, 0, m->ww, bh, 0, 0);
-	XSync(dpy, False);
+//	int x;
+//	unsigned int i, occ = 0, urg = 0;
+//	unsigned long *col;
+//	Client *c;
+//
+//	for(c = m->clients; c; c = c->next) {
+//		occ |= c->tags;
+//		if(c->isurgent)
+//			urg |= c->tags;
+//	}
+//	dc.x = 0;
+//	for(i = 0; i < LENGTH(tags); i++) {
+//		dc.w = TEXTW(tags[i]);
+//		col = m->tagset[m->seltags] & 1 << i ? dc.sel : dc.norm;
+//		drawtext(tags[i], col, urg & 1 << i);
+//		drawsquare(m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
+//		           occ & 1 << i, urg & 1 << i, col);
+//		dc.x += dc.w;
+//	}
+//	dc.w = blw = TEXTW(m->ltsymbol);
+//	drawtext(m->ltsymbol, dc.norm, False);
+//	dc.x += dc.w;
+//	x = dc.x;
+//	if(m == selmon) { /* status is only drawn on selected monitor */
+//		dc.w = TEXTW(stext);
+//		dc.x = m->ww - dc.w;
+//		if(dc.x < x) {
+//			dc.x = x;
+//			dc.w = m->ww - x;
+//		}
+//		drawtext(stext, dc.norm, False);
+//	}
+//	else
+//		dc.x = m->ww;
+//	if((dc.w = dc.x - x) > bh) {
+//		dc.x = x;
+//		if(m->sel) {
+//			col = m == selmon ? dc.sel : dc.norm;
+//			drawtext(m->sel->name, col, False);
+//			drawsquare(m->sel->isfixed, m->sel->isfloating, False, col);
+//		}
+//		else
+//			drawtext(NULL, dc.norm, False);
+//	}
+//	XCopyArea(dpy, dc.drawable, m->barwin, dc.gc, 0, 0, m->ww, bh, 0, 0);
+//	XSync(dpy, False);
 }
 
 void
@@ -1489,9 +1489,6 @@ setup(void) {
 	screen = DefaultScreen(dpy);
 	root = RootWindow(dpy, screen);
 	initfont(font);
-        sw = 480;
-        sh = 320;
-	bh = dc.h = dc.font.height + 2;
 	updategeom();
 	/* init atoms */
 	wmatom[WMProtocols] = XInternAtom(dpy, "WM_PROTOCOLS", False);
@@ -2005,10 +2002,11 @@ zoom(const Arg *arg) {
 }
 
 void
-wm_start(Display *xdpy, int scrWidth, int scrHeight) {
+wm_start(Display *xdpy, int top, int width, int height) {
         dpy = xdpy;
-        sw = scrHeight;
-        sh = scrHeight;
+        bh = top;
+        sw = width;
+        sh = height + top;
         //checkotherwm();
 	setup();
         scan();

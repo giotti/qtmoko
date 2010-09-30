@@ -42,7 +42,7 @@
 #include <X11/Xlib.h>
 
 extern	"C" {
-extern void wm_start(Display *dpy, int scrWidth, int scrHeight);
+extern void wm_start(Display *dpy, int top, int width, int height);
 extern void wm_stop();
 extern void wm_process_events();
 }
@@ -89,6 +89,8 @@ private:
     QString appName;
     bool rotate;
     bool terminating;
+    bool wm;
+    bool kbd;
 #if QTOPIA
     QtopiaApplication::PowerConstraint powerConstraint;
 #endif

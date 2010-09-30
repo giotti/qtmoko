@@ -250,7 +250,7 @@ void QX::showScreen(QX::Screen scr)
     }
     if(scr >= QX::ScreenFullscreen && this->screen < QX::ScreenFullscreen)
     {
-        appRunScr->showScreen();
+        appRunScr->showScreen(kbd);
         if(rotate)
         {
             //system("xrandr -o 1");
@@ -304,8 +304,11 @@ void QX::stopX()
         XCloseDisplay(dpy);
         dpy = NULL;
     }
-    wmTimer->stop();
-    wm_stop();
+    if(wm)
+    {
+        wmTimer->stop();
+        wm_stop();
+    }
     if(xprocess == NULL)
     {
         return;
@@ -372,14 +375,18 @@ void QX::runApp(QString filename, QString applabel, bool rotate)
     fakeKey = fakekey_init(dpy);
 
     showScreen(QX::ScreenRunning);
-    for(int i = 0; i < 10; i++)
-    {
-        QApplication::processEvents();
-    }
+    //qDebug() << "appRunScr size: " << appRunScr->width() << "x" << appRunScr->height();
+    QApplication::processEvents();
 
-    qDebug() << "appRunScr size: " << appRunScr->width() << "x" << appRunScr->height();
-    wm_start(dpy, appRunScr->width(), appRunScr->height());
-    wmTimer->start(10);
+    // Hack - if we have keyboard we dont have fullscreen now and we want apps
+    // to be started below qtopia status bar
+    int top = kbd ? 80 : 1;
+
+    if(wm)
+    {
+        wm_start(dpy, top, appRunScr->width(), appRunScr->height());
+        wmTimer->start(10);
+    }
 
     process = new QProcess(this);
     connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(processFinished(int, QProcess::ExitStatus)));
@@ -568,8 +575,11 @@ void QX::launch_clicked()
     //if (prof.qvga) { }
 
     QString cmd = entry.exec;
+    this->wm = prof.wm;
+    this->kbd = prof.kbd;
 
-    if ((prof.wm) || (prof.kbd))
+    if (prof.matchbox &&
+            ((prof.wm) || (prof.kbd)))
     {
         QString script = "/tmp/.QX_app_launcher.sh";
         QFile f(script);
@@ -583,6 +593,7 @@ void QX::launch_clicked()
             f.close();
         }
         cmd = "sh " + script;
+        this->wm = this->kbd = false;
     }
 
     QString applabel = "<b>"+entry.name+"</b><br/>"+entry.exec;

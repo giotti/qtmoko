@@ -24,6 +24,7 @@ struct AppProfile
     bool qvga;
     bool rotate;
     bool gps;
+    bool matchbox;
 };
 
 class ProfileManager
@@ -49,6 +50,7 @@ class SettingsDialog : public QDialog
         QCheckBox *chb_qvga;
         QCheckBox *chb_rotate;
         QCheckBox *chb_gps;
+        QCheckBox *chb_matchbox;
         QPushButton *btn_save;
         ProfileManager *mngr;
         QString app;

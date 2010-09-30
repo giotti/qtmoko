@@ -9,6 +9,7 @@
 #include <QMouseEvent>
 #include <QTimer>
 #include <QDesktopWidget>
+#include <QDebug>
 #ifdef QTOPIA
 #include <QtopiaApplication>
 #endif
@@ -23,7 +24,7 @@ class AppRunningScreen : public QWidget
 
 public:
     AppRunningScreen();
-    void showScreen();
+    void showScreen(bool);
     QPixmap pixmap;
 
 signals:

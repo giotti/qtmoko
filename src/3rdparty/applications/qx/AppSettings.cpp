@@ -29,6 +29,7 @@ AppProfile ProfileManager::GetAppProfile(QString app)
     prof.qvga = profConf->value("qvga").toBool();
     prof.rotate = profConf->value("rotate").toBool();
     prof.gps = profConf->value("gps").toBool();
+    prof.matchbox = profConf->value("matchbox").toBool();
     profConf->endGroup();
     return prof;
 }
@@ -44,6 +45,7 @@ void ProfileManager::SaveAppProfile(QString app, AppProfile prof)
     profConf->setValue("qvga", prof.qvga);
     profConf->setValue("rotate", prof.rotate);
     profConf->setValue("gps", prof.gps);
+    profConf->setValue("matchbox", prof.matchbox);
     profConf->endGroup();
 }
 
@@ -65,6 +67,7 @@ SettingsDialog::SettingsDialog(QString appname, QWidget *parent) : QDialog(paren
     chb_qvga = new QCheckBox(this);
     chb_rotate = new QCheckBox(this);
     chb_gps = new QCheckBox(this);
+    chb_matchbox = new QCheckBox(this);
     btn_save = new QPushButton(this);
 
     QLabel *initLabel = new QLabel(this);
@@ -77,6 +80,7 @@ SettingsDialog::SettingsDialog(QString appname, QWidget *parent) : QDialog(paren
     chb_qvga->setText(tr("Run in QVGA mode"));
     chb_rotate->setText(tr("Rotate screen"));
     chb_gps->setText(tr("Enable GPS module"));
+    chb_matchbox->setText(tr("Use Matchbox"));
 
     btn_save->setMinimumWidth(150);
     btn_save->setText(tr("Save"));
@@ -91,7 +95,8 @@ SettingsDialog::SettingsDialog(QString appname, QWidget *parent) : QDialog(paren
     grid->addWidget(chb_qvga,6,0,Qt::AlignCenter);
     grid->addWidget(chb_rotate,7,0,Qt::AlignCenter);
     grid->addWidget(chb_gps,8,0,Qt::AlignCenter);
-    grid->addWidget(btn_save,9,0,Qt::AlignCenter);
+    grid->addWidget(chb_matchbox,9,0,Qt::AlignCenter);
+    grid->addWidget(btn_save,10,0,Qt::AlignCenter);
 
     connect (btn_save,SIGNAL(clicked()),this,SLOT(save()));
 
@@ -108,6 +113,7 @@ SettingsDialog::SettingsDialog(QString appname, QWidget *parent) : QDialog(paren
     chb_qvga->setChecked(prof.qvga);
     chb_rotate->setChecked(prof.rotate);
     chb_gps->setChecked(prof.gps);
+    chb_matchbox->setChecked(prof.matchbox);
 }
 
 SettingsDialog::~SettingsDialog()
@@ -126,6 +132,7 @@ void SettingsDialog::save()
     prof.qvga = chb_qvga->isChecked();
     prof.rotate = chb_rotate->isChecked();
     prof.gps = chb_gps->isChecked();
+    prof.matchbox = chb_matchbox->isChecked();
 
     mngr->SaveAppProfile(app, prof);
 
