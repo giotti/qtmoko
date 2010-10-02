@@ -11,6 +11,8 @@ void AppRunningScreen::showScreen(bool fullscreen, bool kbd)
             (this, kbd ?
              QtopiaApplication::AlwaysOn :
              QtopiaApplication::AlwaysOff);
+#else
+    Q_UNUSED(kbd);
 #endif
     showMaximized();
     if(fullscreen)

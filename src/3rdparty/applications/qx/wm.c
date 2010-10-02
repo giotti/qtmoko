@@ -2015,7 +2015,6 @@ wm_start(Display *xdpy, int top, int width, int height) {
 void wm_stop()
 {
 	cleanup();
-	XCloseDisplay(dpy);
 	return 0;
 }
 #ifdef	__cplusplus
