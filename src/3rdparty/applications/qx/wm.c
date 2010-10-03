@@ -250,18 +250,18 @@ static int bh, blw = 0;      /* bar geometry */
 static int (*xerrorxlib)(Display *, XErrorEvent *);
 static unsigned int numlockmask = 0;
 static void (*handler[LASTEvent]) (XEvent *) = {
-	[ButtonPress] = buttonpress,
-	[ConfigureRequest] = configurerequest,
-	[ConfigureNotify] = configurenotify,
-	[DestroyNotify] = destroynotify,
-	[EnterNotify] = enternotify,
-	[Expose] = expose,
-	[FocusIn] = focusin,
-	[KeyPress] = keypress,
-	[MappingNotify] = mappingnotify,
+//	[ButtonPress] = buttonpress,
+//	[ConfigureRequest] = configurerequest,
+//	[ConfigureNotify] = configurenotify,
+//	[DestroyNotify] = destroynotify,
+//	[EnterNotify] = enternotify,
+//	[Expose] = expose,
+//	[FocusIn] = focusin,
+//	[KeyPress] = keypress,
+//	[MappingNotify] = mappingnotify,
 	[MapRequest] = maprequest,
-	[PropertyNotify] = propertynotify,
-	[UnmapNotify] = unmapnotify
+//	[PropertyNotify] = propertynotify,
+//	[UnmapNotify] = unmapnotify
 };
 static Atom wmatom[WMLast], netatom[NetLast];
 static Bool otherwm;
@@ -583,7 +583,7 @@ configurerequest(XEvent *e) {
 			if((ev->value_mask & (CWX|CWY)) && !(ev->value_mask & (CWWidth|CWHeight)))
 				configure(c);
 			if(ISVISIBLE(c))
-				XMoveResizeWindow(dpy, c->win, c->x, c->y, c->w, c->h);
+                                XMoveResizeWindow(dpy, c->win, c->x, c->y, c->w, c->h);
 		}
 		else
 			configure(c);
@@ -600,6 +600,27 @@ configurerequest(XEvent *e) {
 	}
 	XSync(dpy, False);
 }
+
+void
+configurerequest2(XEvent *e) {
+        XConfigureRequestEvent *ev = &e->xconfigurerequest;
+        XWindowChanges wc;
+
+
+                wc.x = 100;
+                wc.y = 100;
+                wc.width = 100;
+                wc.height = 100;
+                wc.border_width = 0;
+                wc.sibling = ev->above;
+                wc.stack_mode = ev->detail;
+                //XConfigureWindow(dpy, ev->window, ev->value_mask, &wc);
+                XMoveResizeWindow(dpy, ev->window, 100, 100, 100, 100);
+
+                XSync(dpy, False);
+                printf("configurerequest2\n");
+}
+
 
 Monitor *
 createmon(void) {
@@ -1082,62 +1103,58 @@ manage(Window w, XWindowAttributes *wa) {
 	static Client cz;
 	Client *c, *t = NULL;
 	Window trans = None;
-	XWindowChanges wc;
 
-	if(!(c = malloc(sizeof(Client))))
-		die("fatal: could not malloc() %u bytes\n", sizeof(Client));
-	*c = cz;
-	c->win = w;
-	updatetitle(c);
-	if(XGetTransientForHint(dpy, w, &trans))
-		t = wintoclient(trans);
-	if(t) {
-		c->mon = t->mon;
-		c->tags = t->tags;
-	}
-	else {
-		c->mon = selmon;
-		applyrules(c);
-	}
-	/* geometry */
-	c->x = wa->x + c->mon->wx;
-	c->y = wa->y + c->mon->wy;
-	c->w = wa->width;
-	c->h = wa->height;
-	c->oldbw = wa->border_width;
-	if(c->w == c->mon->mw && c->h == c->mon->mh) {
-		c->x = c->mon->mx;
-		c->y = c->mon->my;
-		c->bw = 0;
-	}
-	else {
-		if(c->x + WIDTH(c) > c->mon->mx + c->mon->mw)
-			c->x = c->mon->mx + c->mon->mw - WIDTH(c);
-		if(c->y + HEIGHT(c) > c->mon->my + c->mon->mh)
-			c->y = c->mon->my + c->mon->mh - HEIGHT(c);
-		c->x = MAX(c->x, c->mon->mx);
-		/* only fix client y-offset, if the client center might cover the bar */
-		c->y = MAX(c->y, ((c->mon->by == 0) && (c->x + (c->w / 2) >= c->mon->wx)
-		           && (c->x + (c->w / 2) < c->mon->wx + c->mon->ww)) ? bh : c->mon->my);
-		c->bw = borderpx;
-	}
-	wc.border_width = c->bw;
-	XConfigureWindow(dpy, w, CWBorderWidth, &wc);
-	XSetWindowBorder(dpy, w, dc.norm[ColBorder]);
-	configure(c); /* propagates border_width, if size doesn't change */
-	updatesizehints(c);
-	XSelectInput(dpy, w, EnterWindowMask|FocusChangeMask|PropertyChangeMask|StructureNotifyMask);
-	grabbuttons(c, False);
-	if(!c->isfloating)
-		c->isfloating = trans != None || c->isfixed;
-	if(c->isfloating)
-		XRaiseWindow(dpy, c->win);
-	attach(c);
-	attachstack(c);
-	XMoveResizeWindow(dpy, c->win, c->x + 2 * sw, c->y, c->w, c->h); /* some windows require this */
+        if(!(c = malloc(sizeof(Client))))
+                die("fatal: could not malloc() %u bytes\n", sizeof(Client));
+        *c = cz;
+        c->win = w;
+        updatetitle(c);
+        if(XGetTransientForHint(dpy, w, &trans))
+                t = wintoclient(trans);
+        if(t) {
+                c->mon = t->mon;
+                c->tags = t->tags;
+        }
+        else {
+                c->mon = selmon;
+                applyrules(c);
+        }
+        /* geometry */
+        c->x = wa->x + c->mon->wx;
+        c->y = wa->y + c->mon->wy;
+        c->w = wa->width;
+        c->h = wa->height;
+        c->oldbw = wa->border_width;
+        if(c->w == c->mon->mw && c->h == c->mon->mh) {
+                c->x = c->mon->mx;
+                c->y = c->mon->my;
+                c->bw = 0;
+        }
+        else {
+                if(c->x + WIDTH(c) > c->mon->mx + c->mon->mw)
+                        c->x = c->mon->mx + c->mon->mw - WIDTH(c);
+                if(c->y + HEIGHT(c) > c->mon->my + c->mon->mh)
+                        c->y = c->mon->my + c->mon->mh - HEIGHT(c);
+                c->x = MAX(c->x, c->mon->mx);
+                /* only fix client y-offset, if the client center might cover the bar */
+                c->y = MAX(c->y, ((c->mon->by == 0) && (c->x + (c->w / 2) >= c->mon->wx)
+                           && (c->x + (c->w / 2) < c->mon->wx + c->mon->ww)) ? bh : c->mon->my);
+                c->bw = borderpx;
+        }
+        c->y = 100;
+//        updatesizehints(c);
+//	XSelectInput(dpy, w, EnterWindowMask|FocusChangeMask|PropertyChangeMask|StructureNotifyMask);
+//	grabbuttons(c, False);
+//	if(!c->isfloating)
+//		c->isfloating = trans != None || c->isfixed;
+//	if(c->isfloating)
+//		XRaiseWindow(dpy, c->win);
+//	attach(c);
+//	attachstack(c);
+        XMoveResizeWindow(dpy, c->win, 100, 100, 100, 100); /* some windows require this */
 	XMapWindow(dpy, c->win);
-	setclientstate(c, NormalState);
-	arrange(c->mon);
+//	setclientstate(c, NormalState);
+        //arrange(c->mon);
 }
 
 void
@@ -1152,14 +1169,29 @@ mappingnotify(XEvent *e) {
 void
 maprequest(XEvent *e) {
 	static XWindowAttributes wa;
+        XWindowChanges wc;
+
 	XMapRequestEvent *ev = &e->xmaprequest;
 
 	if(!XGetWindowAttributes(dpy, ev->window, &wa))
 		return;
 	if(wa.override_redirect)
 		return;
-	if(!wintoclient(ev->window))
-		manage(ev->window, &wa);
+
+//        wc.x = 10;
+//        wc.y = 10;
+//        wc.width = 100;
+//        wc.height = 100;
+//        wc.border_width = 0;
+//        XConfigureWindow(dpy, ev->window, CWX|CWY|CWWidth|CWHeight|CWBorderWidth, &wc);
+//        XSync(dpy, False);
+
+        XMoveResizeWindow(dpy, ev->window, 100, 100, 100, 100); /* some windows require this */
+        XMapWindow(dpy, ev->window);
+        XSetInputFocus(dpy, ev->window, RevertToPointerRoot, CurrentTime);
+
+        //if(!wintoclient(ev->window))
+          //      manage(ev->window, &wa);
 }
 
 void
@@ -1291,10 +1323,10 @@ resize(Client *c, int x, int y, int w, int h, Bool interact) {
 	XWindowChanges wc;
 
 	if(applysizehints(c, &x, &y, &w, &h, interact)) {
-		c->x = wc.x = x;
-		c->y = wc.y = y;
-		c->w = wc.width = w;
-		c->h = wc.height = h;
+                c->x = wc.x = x;
+                c->y = wc.y = y;
+                c->w = wc.width = w;
+                c->h = wc.height = h;
 		wc.border_width = c->bw;
 		XConfigureWindow(dpy, c->win, CWX|CWY|CWWidth|CWHeight|CWBorderWidth, &wc);
 		configure(c);
@@ -1384,8 +1416,15 @@ wm_process_events(void) {
         XSync(dpy, False);
         num = XPending(dpy);
         while(num > 0 && !XNextEvent(dpy, &ev)) {
-		if(handler[ev.type])
-			handler[ev.type](&ev); /* call handler */
+            printf("ev.type=%d\n", ev.type);
+
+              if(ev.type == ConfigureRequest)
+                {
+                  configurerequest2(&ev);
+
+              }
+              else if(handler[ev.type])
+                        handler[ev.type](&ev); /* call handler */
                 num--;
         }
 }
@@ -1590,7 +1629,7 @@ tile(Monitor *m) {
 	/* master */
 	c = nexttiled(m->clients);
 	mw = m->mfact * m->ww;
-	resize(c, m->wx, m->wy, (n == 1 ? m->ww : mw) - 2 * c->bw, m->wh - 2 * c->bw, False);
+        resize(c, m->wx, 100, (n == 1 ? m->ww : mw) - 2 * c->bw, m->wh - 2 * c->bw, False);
 	if(--n == 0)
 		return;
 	/* tile stack */
@@ -1601,7 +1640,7 @@ tile(Monitor *m) {
 	if(h < bh)
 		h = m->wh;
 	for(i = 0, c = nexttiled(c->next); c; c = nexttiled(c->next), i++) {
-		resize(c, x, y, w - 2 * c->bw, /* remainder */ ((i + 1 == n)
+                resize(c, x, y, w - 2 * c->bw, /* remainder */ ((i + 1 == n)
 		       ? m->wy + m->wh - y - 2 * c->bw : h - 2 * c->bw), False);
 		if(h != m->wh)
 			y = c->y + HEIGHT(c);
