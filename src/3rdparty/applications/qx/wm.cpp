@@ -1,6 +1,9 @@
 #include "wm.h"
 
-static void map_request(XEvent *e, Display *dpy)
+static Display *dpy;
+static int left, top, width, height;
+
+static void map_request(XEvent *e)
 {
     static XWindowAttributes wa;
 
@@ -16,32 +19,39 @@ static void map_request(XEvent *e, Display *dpy)
         return;
     }
 
-    XMoveResizeWindow(dpy, ev->window, 100, 100, 100, 100); /* some windows require this */
+    XMoveResizeWindow(dpy, ev->window, left, top, width, height); /* some windows require this */
     XMapWindow(dpy, ev->window);
     XSetInputFocus(dpy, ev->window, RevertToPointerRoot, CurrentTime);
 }
 
-void wm_process_events(Display *dpy)
+void wm_process_events()
 {
     XEvent ev;
     int num;
 
     XSync(dpy, False);
     num = XPending(dpy);
-    while(num > 0 && !XNextEvent(dpy, &ev)) {
+    while(num > 0 && !XNextEvent(dpy, &ev))
+    {
         if(ev.type == MapRequest)
         {
-            map_request(&ev, dpy);
+            map_request(&ev);
         }
         num--;
     }
 }
 
-void wm_start(Display *dpy, int top, int width, int height)
+void wm_start(Display *display, int area_left, int area_top, int area_width, int area_height)
 {
     XSetWindowAttributes wa;
     int screen;
     Window root;
+
+    dpy = display;
+    left = area_left;
+    top = area_top;
+    width = area_width;
+    height = area_height;
 
     screen = DefaultScreen(dpy);
     root = RootWindow(dpy, screen);

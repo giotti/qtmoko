@@ -381,18 +381,18 @@ void QX::runApp(QString filename, QString applabel, bool rotate)
     {
         // Hack - if not in fullscreen we want apps to be started below qtopia
         // status bar
-        int top = fullscreen ? 1 : 80;
+        int top = fullscreen ? 0 : 80;
         int width = appRunScr->width();
         int height = appRunScr->height();
 
-        if(fullscreen && kbd)
+        if(kbd)
         {
-            height -= 160;      // hack: if we run keyboard in fullscreen the height is 640 but should be less because of keyboard height
+            height -= 164;      // hack: keyboard height - how to get correct size?
         }
 
         //qDebug() << " top=" << top << " appRunScr size: " << width << "x" << height;
 
-        wm_start(dpy, top, width, height);
+        wm_start(dpy, 0, top, width, height);
         wmTimer->start(10);
     }
 

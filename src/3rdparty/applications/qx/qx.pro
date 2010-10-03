@@ -15,7 +15,7 @@ SOURCES += main.cpp \
     DesktopScanner.cpp \
     rotate.cpp \
     libfakekey.c \
-    wm.c
+    wm.cpp
 HEADERS += qx.h \
     apprunningscreen.h \
     AppInfo.h \

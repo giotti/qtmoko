@@ -40,7 +40,7 @@ SOURCES=\
     AppInfo.cpp \
     rotate.cpp \
     libfakekey.c \
-    wm.c
+    wm.cpp
 
 # Install rules
 target [

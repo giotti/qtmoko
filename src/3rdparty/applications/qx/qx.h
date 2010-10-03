@@ -35,17 +35,12 @@
 #endif
 #include "rotate.h"
 #include "fakekey.h"
+#include "wm.h"
 #include <unistd.h>
 #include <fcntl.h>
 #include <linux/vt.h>
 #include <sys/ioctl.h>
 #include <X11/Xlib.h>
-
-extern	"C" {
-extern void wm_start(Display *dpy, int top, int width, int height);
-extern void wm_stop();
-extern void wm_process_events();
-}
 
 class QX : public QWidget
 {
