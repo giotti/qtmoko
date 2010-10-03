@@ -100,7 +100,6 @@ typedef struct {
 	int x, y, w, h;
 	unsigned long norm[ColLast];
 	unsigned long sel[ColLast];
-	Drawable drawable;
 	GC gc;
 	struct {
 		int ascent;
@@ -485,7 +484,6 @@ cleanup(void) {
 	else
 		XFreeFont(dpy, dc.font.xfont);
 	XUngrabKey(dpy, AnyKey, AnyModifier, root);
-	XFreePixmap(dpy, dc.drawable);
 	XFreeGC(dpy, dc.gc);
 	XFreeCursor(dpy, cursor[CurNormal]);
 	XFreeCursor(dpy, cursor[CurResize]);
@@ -550,9 +548,6 @@ configurenotify(XEvent *e) {
 		sw = ev->width;
 		sh = ev->height;
 		if(updategeom()) {
-			if(dc.drawable != 0)
-				XFreePixmap(dpy, dc.drawable);
-			dc.drawable = XCreatePixmap(dpy, root, sw, bh, DefaultDepth(dpy, screen));
 			updatebars();
 			for(m = mons; m; m = m->next)
 				XMoveResizeWindow(dpy, m->barwin, m->wx, m->by, m->ww, bh);
@@ -750,11 +745,9 @@ drawsquare(Bool filled, Bool empty, Bool invert, unsigned long col[ColLast]) {
 	r.y = dc.y + 1;
 	if(filled) {
 		r.width = r.height = x + 1;
-		XFillRectangles(dpy, dc.drawable, dc.gc, &r, 1);
 	}
 	else if(empty) {
 		r.width = r.height = x;
-		XDrawRectangles(dpy, dc.drawable, dc.gc, &r, 1);
 	}
 }
 
@@ -765,7 +758,6 @@ drawtext(const char *text, unsigned long col[ColLast], Bool invert) {
 	XRectangle r = { dc.x, dc.y, dc.w, dc.h };
 
 	XSetForeground(dpy, dc.gc, col[invert ? ColFG : ColBG]);
-	XFillRectangles(dpy, dc.drawable, dc.gc, &r, 1);
 	if(!text)
 		return;
 	olen = strlen(text);
@@ -780,10 +772,6 @@ drawtext(const char *text, unsigned long col[ColLast], Bool invert) {
 	if(len < olen)
 		for(i = len; i && i > len - 3; buf[--i] = '.');
 	XSetForeground(dpy, dc.gc, col[invert ? ColBG : ColFG]);
-	if(dc.font.set)
-		XmbDrawString(dpy, dc.drawable, dc.font.set, dc.gc, x, y, buf, len);
-	else
-		XDrawString(dpy, dc.drawable, dc.gc, x, y, buf, len);
 }
 
 void
@@ -1507,7 +1495,6 @@ setup(void) {
 	dc.sel[ColBorder] = getcolor(selbordercolor);
 	dc.sel[ColBG] = getcolor(selbgcolor);
 	dc.sel[ColFG] = getcolor(selfgcolor);
-	dc.drawable = XCreatePixmap(dpy, root, DisplayWidth(dpy, screen), bh, DefaultDepth(dpy, screen));
 	dc.gc = XCreateGC(dpy, root, 0, NULL);
 	XSetLineAttributes(dpy, dc.gc, 1, LineSolid, CapButt, JoinMiter);
 	if(!dc.font.set)
