@@ -1507,51 +1507,6 @@ setmfact(const Arg *arg) {
 
 void
 setup(void) {
-	XSetWindowAttributes wa;
-
-	/* clean up any zombies immediately */
-        //sigchld(0);
-
-	/* init screen */
-	screen = DefaultScreen(dpy);
-	root = RootWindow(dpy, screen);
-	initfont(font);
-	updategeom();
-	/* init atoms */
-	wmatom[WMProtocols] = XInternAtom(dpy, "WM_PROTOCOLS", False);
-	wmatom[WMDelete] = XInternAtom(dpy, "WM_DELETE_WINDOW", False);
-	wmatom[WMState] = XInternAtom(dpy, "WM_STATE", False);
-	netatom[NetSupported] = XInternAtom(dpy, "_NET_SUPPORTED", False);
-	netatom[NetWMName] = XInternAtom(dpy, "_NET_WM_NAME", False);
-	/* init cursors */
-	cursor[CurNormal] = XCreateFontCursor(dpy, XC_left_ptr);
-	cursor[CurResize] = XCreateFontCursor(dpy, XC_sizing);
-	cursor[CurMove] = XCreateFontCursor(dpy, XC_fleur);
-	/* init appearance */
-	dc.norm[ColBorder] = getcolor(normbordercolor);
-	dc.norm[ColBG] = getcolor(normbgcolor);
-	dc.norm[ColFG] = getcolor(normfgcolor);
-	dc.sel[ColBorder] = getcolor(selbordercolor);
-	dc.sel[ColBG] = getcolor(selbgcolor);
-	dc.sel[ColFG] = getcolor(selfgcolor);
-	dc.gc = XCreateGC(dpy, root, 0, NULL);
-	XSetLineAttributes(dpy, dc.gc, 1, LineSolid, CapButt, JoinMiter);
-	if(!dc.font.set)
-		XSetFont(dpy, dc.gc, dc.font.xfont->fid);
-	/* init bars */
-	updatebars();
-	updatestatus();
-	/* EWMH support per view */
-	XChangeProperty(dpy, root, netatom[NetSupported], XA_ATOM, 32,
-			PropModeReplace, (unsigned char *) netatom, NetLast);
-	/* select for events */
-	wa.cursor = cursor[CurNormal];
-	wa.event_mask = SubstructureRedirectMask|SubstructureNotifyMask|ButtonPressMask
-	                |EnterWindowMask|LeaveWindowMask|StructureNotifyMask
-	                |PropertyChangeMask;
-	XChangeWindowAttributes(dpy, root, CWEventMask|CWCursor, &wa);
-	XSelectInput(dpy, root, wa.event_mask);
-	grabkeys();
 }
 
 void
@@ -2034,14 +1989,25 @@ wm_start(Display *xdpy, int top, int width, int height) {
         sw = width;
         sh = height;
         //checkotherwm();
-	setup();
-        scan();
+        XSetWindowAttributes wa;
+
+        /* init screen */
+        screen = DefaultScreen(dpy);
+        root = RootWindow(dpy, screen);
+        /* select for events */
+        wa.event_mask = SubstructureRedirectMask|SubstructureNotifyMask|ButtonPressMask
+                        |EnterWindowMask|LeaveWindowMask|StructureNotifyMask
+                        |PropertyChangeMask;
+        XChangeWindowAttributes(dpy, root, CWEventMask, &wa);
+        XSelectInput(dpy, root, wa.event_mask);
+
+//        scan();
 }
 
 void wm_stop()
 {
 	cleanup();
-	return 0;
+        return 0;
 }
 #ifdef	__cplusplus
 };
