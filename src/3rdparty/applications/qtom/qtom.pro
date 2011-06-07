@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-TARGET = OmProject
+TARGET = qtom
 TEMPLATE = app
 
 

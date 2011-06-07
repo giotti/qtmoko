@@ -24,6 +24,9 @@
        <string>Battery</string>
       </attribute>
       <layout class="QFormLayout" name="formLayout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+       </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_4">
          <property name="text">
@@ -197,13 +200,13 @@
           <widget class="QSlider" name="battery_chargerLimit">
            <property name="minimumSize">
             <size>
-             <width>270</width>
+             <width>300</width>
              <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>270</width>
+             <width>300</width>
              <height>16777215</height>
             </size>
            </property>
@@ -225,7 +228,7 @@
           <widget class="QSpinBox" name="battery_chargerLimitValue">
            <property name="minimumSize">
             <size>
-             <width>35</width>
+             <width>40</width>
              <height>0</height>
             </size>
            </property>
@@ -257,7 +260,7 @@
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>40</width>
+             <width>20</width>
              <height>20</height>
             </size>
            </property>
