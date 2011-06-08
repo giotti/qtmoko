@@ -37,18 +37,15 @@
        <item row="0" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QLineEdit" name="battery_temp">
+          <widget class="QSpinBox" name="battery_temperature">
            <property name="minimumSize">
             <size>
              <width>300</width>
              <height>0</height>
             </size>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>301</width>
-             <height>16777215</height>
-            </size>
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::NoButtons</enum>
            </property>
           </widget>
          </item>
@@ -103,18 +100,15 @@
        <item row="1" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLineEdit" name="battery_energy">
+          <widget class="QSpinBox" name="battery_energy">
            <property name="minimumSize">
             <size>
              <width>300</width>
              <height>0</height>
             </size>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>300</width>
-             <height>16777215</height>
-            </size>
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::NoButtons</enum>
            </property>
           </widget>
          </item>
@@ -150,18 +144,15 @@
        <item row="2" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
-          <widget class="QLineEdit" name="battery_consuption">
+          <widget class="QSpinBox" name="battery_consumption">
            <property name="minimumSize">
             <size>
              <width>300</width>
              <height>0</height>
             </size>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>300</width>
-             <height>16777215</height>
-            </size>
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::NoButtons</enum>
            </property>
           </widget>
          </item>
@@ -200,13 +191,13 @@
           <widget class="QSlider" name="battery_chargerLimit">
            <property name="minimumSize">
             <size>
-             <width>300</width>
+             <width>270</width>
              <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>300</width>
+             <width>270</width>
              <height>16777215</height>
             </size>
            </property>
@@ -228,7 +219,7 @@
           <widget class="QSpinBox" name="battery_chargerLimitValue">
            <property name="minimumSize">
             <size>
-             <width>40</width>
+             <width>35</width>
              <height>0</height>
             </size>
            </property>
@@ -260,13 +251,33 @@
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>20</width>
+             <width>40</width>
              <height>20</height>
             </size>
            </property>
           </spacer>
          </item>
         </layout>
+       </item>
+       <item row="4" column="0">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>80</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="1">
+        <widget class="QPushButton" name="Applay">
+         <property name="text">
+          <string>Applay</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
