@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment[]=A GUI to om
+Exec=qmom
+Type=Application
+Name[]=qtom
+Icon=qtom/qtom
+MimeType=""
+MimeTypeIcons=""
+[Translation]
+File=QtopiaApplications
+Context=qtom
