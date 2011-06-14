@@ -11,19 +11,27 @@ LANGUAGES=en_US
 # Package info
 pkg [
     name=qtcapra
-    desc="Sgarbi emulator"
-    license=BSD
-    version=0.1
-    maintainer="Giotti <xxxxxxx@xxxxxx.xx>"
+    desc="Sgarmi emulator"
+    license=GPLv2
+    version=1.0
+    maintainer="giotti"
 ]
 
 # Input files
+FORMS +=\
+    qtcapra.ui\
+    widget.ui
+
 HEADERS=\
-    qtcapra.h
+    qtcapra.h\
+    rotate.h\
+    widget.h
 
 SOURCES=\
     main.cpp\
-    qtcapra.cpp
+    qtcapra.cpp\
+    rotate.cpp\
+    widget.cpp
 
 # Install rules
 target [
@@ -34,7 +42,7 @@ target [
 desktop [
     hint=desktop
     files=qtcapra.desktop
-    path=/apps/Applications
+    path=/apps/Games
 ]
 
 pics [

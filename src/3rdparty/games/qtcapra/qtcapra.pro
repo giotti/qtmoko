@@ -1,15 +1,22 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2009-04-14T22:32:40
+# Project created by QtCreator 2011-05-04T15:52:15
 #
 #-------------------------------------------------
+
+QT       += core gui
 
 TARGET = qtcapra
 TEMPLATE = app
 
-QT          += core gui network
 
 SOURCES += main.cpp\
-        qtcapra.cpp
+    qtcapra.cpp \
+    rotate.cpp
 
-HEADERS  += qtcapra.h
+HEADERS  += \
+    qtcapra.h \
+    rotate.h
+
+FORMS    += \
+    qtcapra.ui
