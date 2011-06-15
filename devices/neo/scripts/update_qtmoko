@@ -25,7 +25,7 @@ upload_image()
 
 move_image()
 {
-    scp $QTOPIA_IMAGE cin8249a@login.plx.cineca.it:$CINECA_SCRATCH || die upload_image
+    scp $QTOPIA_IMAGE cin0641a@sp6:$CINECA_SCRATCH || die move_image
 }
 
 install_image()
@@ -46,9 +46,9 @@ rm -rf opt/*
 mkdir -p opt/qtmoko
 cp -r image/* opt/qtmoko
 
-# remove patented stuff - can be installed via package later
-rm -f opt/qtmoko/plugins/codecs/libmadplugin.so
-rm -f opt/qtmoko/lib/libmad.so.0
+## remove patented stuff - can be installed via package later
+#rm -f opt/qtmoko/plugins/codecs/libmadplugin.so
+#rm -f opt/qtmoko/lib/libmad.so.0
 
 # symlink to ttfont installed together with X
 cd opt/qtmoko/lib
@@ -88,8 +88,7 @@ echo "Starting Flash process, please wait..."
 #echo "Flashing begins..........please wait....."
 #install_image
 #echo "Image installed, phone will automatically restart Qtopia"
-echo "Preparing and pushing images on scratch.."
+echo "Preparing and pushing images on sp6 scratch.."
 move_image
 echo
 echo
-

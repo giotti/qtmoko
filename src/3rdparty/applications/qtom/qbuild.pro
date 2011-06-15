@@ -1,5 +1,5 @@
 TEMPLATE=app
-TARGET=qmplayer
+TARGET=qtom
 
 CONFIG+=qtopia
 DEFINES+=QTOPIA
@@ -10,20 +10,26 @@ LANGUAGES=en_US
 
 # Package info
 pkg [
-    name=qmplayer
-    desc="MPlayer frontend"
+    name=qtom
+    desc="OM GUI"
     license=GPLv2
     version=1.0
-    maintainer="Radek Polak <psonek2@seznam.cz>"
+    maintainer="giotti"
 ]
 
 # Input files
+FORMS +=\
+    qtom.ui\
+    widget.ui
+
 HEADERS=\
-    qmplayer.h
+    qtom.h\
+    widget.h
 
 SOURCES=\
     main.cpp\
-    qmplayer.cpp
+    qtom.cpp\
+    widget.cpp
 
 # Install rules
 target [
@@ -33,13 +39,13 @@ target [
 
 desktop [
     hint=desktop
-    files=qmplayer.desktop
+    files=qtom.desktop
     path=/apps/Applications
 ]
 
 pics [
     hint=pics
     files=pics/*
-    path=/pics/qmplayer
+    path=/pics/qtom
 ]
 

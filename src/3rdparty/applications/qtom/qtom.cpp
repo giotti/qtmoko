@@ -1,6 +1,11 @@
 #include "./qtom.h"
 #include "./ui_qtom.h"
 
+#ifdef QTOPIA
+#include <QtopiaServiceRequest>
+#include <QValueSpaceItem>
+#endif
+
 //------
 MyProcess::MyProcess( QObject* )
 : QProcess()
@@ -18,7 +23,8 @@ QtOm::QtOm(QWidget *parent)
 : QWidget(parent),
     ui(new Ui::QtOm) {
     ui->setupUi(this);
-    program = "/home/jack/GIT/qtmoko/src/3rdparty/applications/qtom/bin/om";
+    //program = "/home/jack/GIT/qtmoko/src/3rdparty/applications/qtom/bin/om";
+    program = "/usr/bin/om";
 
     //--- connections ---
     connect(ui->battery_chargerLimit, SIGNAL(valueChanged(int)), ui->battery_chargerLimitValue,  SLOT(setValue(int)));

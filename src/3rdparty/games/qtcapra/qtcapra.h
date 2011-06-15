@@ -20,11 +20,16 @@ public:
 
 
 protected:
-    virtual void initProcess( QSpinBox* sb, QStringList arguments );
+    virtual void initProcess(QStringList prog , QStringList arguments );
 
-protected slots:
-    virtual void readOmOutput();
-    virtual void writeOmOutput();
+//protected slots:
+//    virtual void readOmOutput();
+//    virtual void writeOmOutput();
+
+private slots:
+    void on_quitButton_clicked();
+
+    void on_startButton_clicked();
 
 private:
     Ui::QtCapra *ui;

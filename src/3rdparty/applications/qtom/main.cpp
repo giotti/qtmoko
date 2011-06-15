@@ -1,6 +1,11 @@
 #include <QtGui/QApplication>
 #include "qtom.h"
 
+#ifdef QTOPIA
+#include <QtopiaServiceRequest>
+#include <QValueSpaceItem>
+#endif
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

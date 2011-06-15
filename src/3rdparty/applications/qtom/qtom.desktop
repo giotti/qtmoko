@@ -1,6 +1,6 @@
 [Desktop Entry]
 Comment[]=A GUI to om
-Exec=qmom
+Exec=qtom
 Type=Application
 Name[]=qtom
 Icon=qtom/qtom
