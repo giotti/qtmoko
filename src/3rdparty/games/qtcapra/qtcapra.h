@@ -32,10 +32,12 @@ private slots:
     void on_quitButton_clicked();
 
     void on_startButton_clicked();
+    void onVolumeChanged(int v) { _volume = v; };
 
 private:
     Ui::QtCapra *ui;
     RotateHelper *_rh;
+    int _volume;
 };
 
 

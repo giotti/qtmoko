@@ -25,9 +25,11 @@ QtCapra::QtCapra(QWidget *parent)
     ui->setupUi(this);
     //program = "/home/jack/GIT/qtmoko/src/3rdparty/applications/qtcapra/bin/om";
 
-    _rh = new RotateHelper();
+    _rh     = new RotateHelper();
+    _volume = 100;
 
     connect(_rh, SIGNAL(rotated(bool)), this, SLOT( on_startButton_clicked() ));
+    connect(ui->volume, SIGNAL(valueChanged(int)), this,  SLOT(onVolumeChanged(int)));
 
     _rh->start(); // the default sample rate is 500ms
 
@@ -63,8 +65,8 @@ void QtCapra::on_quitButton_clicked()
 
 void QtCapra::on_startButton_clicked()
 {
-//    int volume;
-//    connect(ui->volume, SIGNAL(valueChanged(int)), this,  SLOT(volume));
-    system("/usr/bin/mplayer -volume 100 /opt/qtmoko/sounds/capra.mp3");
+    QString command = "/usr/bin/mplayer -volume " + QString::number(_volume) + " /opt/qtmoko/sounds/capra.mp3";
 
+    system(qPrintable(command));
+    //system( command.toStdString().c_str() );
 }
