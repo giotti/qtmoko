@@ -139,7 +139,7 @@ void RotateHelper::restore()
 
 void RotateHelper::maybe_rotate(int deg)
 {
-    rotate(deg);
+//    rotate(deg);
     emit rotated(IS_LANDSCAPE(deg));
     emit rotatedDeg(deg);
 }

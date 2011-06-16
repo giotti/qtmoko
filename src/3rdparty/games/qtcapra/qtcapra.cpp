@@ -63,6 +63,8 @@ void QtCapra::on_quitButton_clicked()
 
 void QtCapra::on_startButton_clicked()
 {
+//    int volume;
+//    connect(ui->volume, SIGNAL(valueChanged(int)), this,  SLOT(volume));
     system("/usr/bin/mplayer -volume 100 /opt/qtmoko/sounds/capra.mp3");
 
 }
