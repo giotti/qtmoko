@@ -141,6 +141,7 @@ void RotateHelper::maybe_rotate(int deg)
 {
     rotate(deg);
     emit rotated(IS_LANDSCAPE(deg));
+    emit rotatedDeg(deg);
 }
 
 void RotateHelper::sample()

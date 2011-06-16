@@ -7,13 +7,13 @@
 #endif
 
 //------
-MyProcess::MyProcess( QObject* )
-: QProcess()
-{
-    _item = NULL;
-}
+//MyProcess::MyProcess( QObject* )
+//: QProcess()
+//{
+//    _item = NULL;
+//}
 
-MyProcess::~MyProcess() {}
+//MyProcess::~MyProcess() {}
 
 //------
 
@@ -25,57 +25,31 @@ QtCapra::QtCapra(QWidget *parent)
     ui->setupUi(this);
     //program = "/home/jack/GIT/qtmoko/src/3rdparty/applications/qtcapra/bin/om";
 
+    _rh = new RotateHelper();
+
+    connect(_rh, SIGNAL(rotated(bool)), this, SLOT( on_startButton_clicked() ));
+
+    _rh->start(); // the default sample rate is 500ms
+
+//    rh->stop();
+
+//    rh->restore();
 
     //--- connections ---
-    //connect(ui->battery_chargerLimit, SIGNAL(valueChanged(int)), ui->battery_chargerLimitValue,  SLOT(setValue(int)));
-    //connect(ui->battery_chargerLimitValue, SIGNAL(valueChanged(int)), ui->battery_chargerLimit,  SLOT(setValue(int)));
 
-
-    //--- Battery ---
-    //initProcess( ui->battery_energy, arguments );
-    //arguments << "battery" << "charger-limit";
-    //initProcess( ui->battery_chargerLimitValue, arguments );
-    //arguments << "battery" << "temperature";
-    //initProcess( ui->battery_temperature, arguments );
-    //arguments << "battery" << "consumption";
-    //initProcess( ui->battery_consumption, arguments );
 }
 
-//void QtCapra::readOmOutput() {
-//    MyProcess* proc = dynamic_cast<MyProcess*>(sender());
+//void QtCapra::initProcess(QString prog, QStringList args ) {
+//    //TODO change absolute path with something smarter...
 
-//    QByteArray myStdOut = proc->readAllStandardOutput();
-//    QString val(myStdOut);
 
-//    if( !proc->getAssociatedItem() )
-//        return;
+//    MyProcess* p = new MyProcess();
+//    //p->setAssociatedItem(sb);
+//    //connect(p, SIGNAL(finished(int)), this, SLOT(readOmOutput()));
 
-//    proc->getAssociatedItem()->setValue(val.toInt());
+//    //launch om
+//    p->start(prog, args);
 //}
-
-//void QtCapra::writeOmOutput() {
-//    MyProcess* proc = dynamic_cast<MyProcess*>(sender());
-
-//    QByteArray myStdOut = proc->readAllStandardOutput();
-//    QString val(myStdOut);
-
-//    if( !proc->getAssociatedItem() )
-//        return;
-
-//    proc->getAssociatedItem()->setValue(val.toInt());
-//}
-
-void QtCapra::initProcess(QStringList prog, QStringList args ) {
-    //TODO change absolute path with something smarter...
-
-
-    MyProcess* p = new MyProcess();
-    //p->setAssociatedItem(sb);
-    //connect(p, SIGNAL(finished(int)), this, SLOT(readOmOutput()));
-
-    //launch om
-    p->start(prog, args);
-}
 
 QtCapra::~QtCapra() {
     delete ui;
@@ -83,13 +57,12 @@ QtCapra::~QtCapra() {
 
 void QtCapra::on_quitButton_clicked()
 {
-    delete ui;
+    _rh->stop();
+    close();
 }
 
 void QtCapra::on_startButton_clicked()
 {
-    program = "/usr/bin/mplayer";
-    QStringList arguments;
-    arguments << "-volume 100" << "/opt/qtmoko/sounds/capra.mp3";
-    initProcess(program, arguments);
+    system("/usr/bin/mplayer -volume 100 /opt/qtmoko/sounds/capra.mp3");
+
 }

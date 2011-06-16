@@ -5,6 +5,8 @@
 #include <QProcess>
 #include <QSpinBox>
 
+#include "rotate.h"
+
 namespace Ui {
     class QtCapra;
 }
@@ -19,8 +21,8 @@ public:
     QString program;
 
 
-protected:
-    virtual void initProcess(QStringList prog , QStringList arguments );
+//protected:
+//    virtual void initProcess(QString prog , QStringList arguments );
 
 //protected slots:
 //    virtual void readOmOutput();
@@ -33,25 +35,26 @@ private slots:
 
 private:
     Ui::QtCapra *ui;
+    RotateHelper *_rh;
 };
 
 
 /**
   Initialize a custom process which store associated item pointer
 */
-class MyProcess : public QProcess
-{
-    Q_OBJECT
+//class MyProcess : public QProcess
+//{
+//    Q_OBJECT
 
-public:
-    explicit MyProcess(QObject *parent = 0);
-    ~MyProcess();
+//public:
+//    explicit MyProcess(QObject *parent = 0);
+//    ~MyProcess();
 
-    void setAssociatedItem( QSpinBox* sb ) { _item = sb; };
-    QSpinBox* getAssociatedItem() { return _item; };
+//    void setAssociatedItem( QSpinBox* sb ) { _item = sb; };
+//    QSpinBox* getAssociatedItem() { return _item; };
 
-private:
-    QSpinBox* _item; //associated item
-};
+//private:
+//    QSpinBox* _item; //associated item
+//};
 
 #endif // QTOM_H

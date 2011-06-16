@@ -37,6 +37,7 @@ class RotateHelper : public QObject
 
 signals:
      void rotated(bool landscape);
+     void rotatedDeg(int);
 
  private:
 	void maybe_rotate(int deg);
