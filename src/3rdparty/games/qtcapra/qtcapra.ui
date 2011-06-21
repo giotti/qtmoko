@@ -21,7 +21,7 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="2">
+   <item row="3" column="0" colspan="2">
     <widget class="QPushButton" name="quitButton">
      <property name="text">
       <string>Quit</string>
@@ -30,11 +30,14 @@
    </item>
    <item row="1" column="0">
     <widget class="QSlider" name="volume">
+     <property name="minimum">
+      <number>50</number>
+     </property>
      <property name="maximum">
-      <number>250</number>
+      <number>100</number>
      </property>
      <property name="value">
-      <number>50</number>
+      <number>80</number>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -46,6 +49,23 @@
      <property name="text">
       <string>Volume</string>
      </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QComboBox" name="comboBox">
+     <property name="minimumContentsLength">
+      <number>5</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>capra</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>culatone</string>
+      </property>
+     </item>
     </widget>
    </item>
   </layout>

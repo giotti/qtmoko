@@ -81,7 +81,7 @@ void RotateHelper::start(int timeinms)
 {
 	// remember where we were when we started
 	QValueSpaceItem vsiRot("/UI/Rotation/Current");
-    initial_rotation= vsiRot.value().toUInt();
+        initial_rotation= vsiRot.value().toUInt();
 	
 	// don't allow multiple timers to run
 	if(timer != NULL){
@@ -148,7 +148,7 @@ void RotateHelper::sample()
 {
 	if(packet_reader()){
 		int pos= define_position();
-		if(pos != last_pos)
+                if ((pos == 0) & (last_pos == 1))
 			maybe_rotate(pos);
 		last_pos= pos;
 	}else{
@@ -197,10 +197,10 @@ int RotateHelper::define_position(void)
 	else
 		up=0;
 
-	if(down) current_pos=DOWN;
-	else if(up) current_pos=UP;
-	else if(left) current_pos=LEFT;
-	else if(right) current_pos=RIGHT;
+        if(down) current_pos=0;
+        else if(up) current_pos=1;
+        else if(left) current_pos=-1;
+        else if(right) current_pos=-1;
 
 	if(debug)
 	{

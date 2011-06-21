@@ -65,8 +65,9 @@ void QtCapra::on_quitButton_clicked()
 
 void QtCapra::on_startButton_clicked()
 {
-    QString command = "/usr/bin/mplayer -volume " + QString::number(_volume) + " /opt/qtmoko/sounds/capra.mp3";
-
+    //connect( ui->comboBox, SIGNAL( currentIndexChanged(const QString&) ), this, SLOT(const insulto));
+    //QString command = "/usr/bin/mplayer -volume " + QString::number(_volume) + " /opt/qtmoko/sounds/" + QString::character(insulto) + ".wav";
+    QString command = "/usr/bin/mplayer -volume " + QString::number(_volume) + " /opt/qtmoko/sounds/capra.wav";
     system(qPrintable(command));
     //system( command.toStdString().c_str() );
 }
