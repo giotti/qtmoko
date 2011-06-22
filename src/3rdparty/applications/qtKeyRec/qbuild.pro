@@ -11,7 +11,7 @@ LANGUAGES=en_US
 # Package info
 pkg [
     name=qtKeyRec
-    desc="Sgarmi emulator"
+    desc="WiFi Key Recover"
     license=GPLv2
     version=1.0
     maintainer="giotti"
@@ -24,13 +24,11 @@ FORMS +=\
 
 HEADERS=\
     qtKeyRec.h\
-    rotate.h\
     widget.h
 
 SOURCES=\
     main.cpp\
     qtKeyRec.cpp\
-    rotate.cpp\
     widget.cpp
 
 # Install rules
@@ -42,7 +40,7 @@ target [
 desktop [
     hint=desktop
     files=qtKeyRec.desktop
-    path=/apps/Games
+    path=/apps/Applications
 ]
 
 pics [

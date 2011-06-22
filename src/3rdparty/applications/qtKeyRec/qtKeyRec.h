@@ -5,8 +5,6 @@
 #include <QProcess>
 #include <QSpinBox>
 
-#include "rotate.h"
-
 namespace Ui {
     class QtKeyRec;
 }
@@ -36,7 +34,6 @@ private slots:
 
 private:
     Ui::QtKeyRec *ui;
-    RotateHelper *_rh;
     int _volume;
 };
 

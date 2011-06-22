@@ -25,13 +25,11 @@ QtKeyRec::QtKeyRec(QWidget *parent)
     ui->setupUi(this);
     //program = "/home/jack/GIT/qtmoko/src/3rdparty/applications/qtKeyRec/bin/om";
 
-    _rh     = new RotateHelper();
     _volume = 100;
 
-    connect(_rh, SIGNAL(rotated(bool)), this, SLOT( on_startButton_clicked() ));
-    connect(ui->volume, SIGNAL(valueChanged(int)), this,  SLOT(onVolumeChanged(int)));
+//    connect(ui->volume, SIGNAL(valueChanged(int)), this,  SLOT(onVolumeChanged(int)));
 
-    _rh->start(); // the default sample rate is 500ms
+//    _rh->start(); // the default sample rate is 500ms
 
 //    rh->stop();
 
@@ -59,7 +57,6 @@ QtKeyRec::~QtKeyRec() {
 
 void QtKeyRec::on_quitButton_clicked()
 {
-    _rh->stop();
     close();
 }
 

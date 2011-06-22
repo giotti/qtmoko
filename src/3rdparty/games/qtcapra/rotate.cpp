@@ -53,7 +53,7 @@ RotateHelper::RotateHelper(QObject *parent, int dflg) : QObject(parent)
 	right = 0;
 	up = 0;
 	down = 0;
-	last_pos= -1;
+        last_pos= 1;
 	current_pos = -1;
 	event3 = -1;
 	debug = dflg;
@@ -109,48 +109,49 @@ void RotateHelper::stop()
 	}
 }
 
-void rotate(int degree)
-{
-    switch(degree)
-    {
-        case 90:
-            system("xrandr -o 1");
-            break;
-        case 180:
-            system("xrandr -o 2");
-            break;
-        case 270:
-            system("xrandr -o 3");
-            break;
-        default:
-            system("xrandr -o 0");
-        break;
-    }
-}
+//void rotate(int degree)
+//{
+//    switch(degree)
+//    {
+//        case 90:
+//            system("xrandr -o 1");
+//            break;
+//        case 180:
+//            system("xrandr -o 2");
+//            break;
+//        case 270:
+//            system("xrandr -o 3");
+//            break;
+//        default:
+//            system("xrandr -o 0");
+//        break;
+//    }
+//}
 
 // restore to whatever the rotation was when we started
-void RotateHelper::restore()
-{
-	if(initial_rotation != -1){
-                rotate(initial_rotation);
-		emit rotated(IS_LANDSCAPE(initial_rotation));
-	}
-}
+//void RotateHelper::restore()
+//{
+//       if(initial_rotation != -1){
+//                rotate(initial_rotation);
+//                emit rotated(IS_LANDSCAPE(initial_rotation));
+//        }
+//}
 
-void RotateHelper::maybe_rotate(int deg)
-{
+//void RotateHelper::maybe_rotate(int deg)
+//{
 //    rotate(deg);
-    emit rotated(IS_LANDSCAPE(deg));
-    emit rotatedDeg(deg);
-}
+//    emit rotated(IS_LANDSCAPE(deg));
+//    emit rotatedDeg(deg);
+//}
 
 void RotateHelper::sample()
 {
 	if(packet_reader()){
 		int pos= define_position();
                 if ((pos == 0) & (last_pos == 1))
-			maybe_rotate(pos);
-		last_pos= pos;
+                        emit rotated(IS_LANDSCAPE(pos));
+//			maybe_rotate(pos);
+//		last_pos= pos;
 	}else{
 		qWarning("RotateHelper: packet reader failed");
 		stop();

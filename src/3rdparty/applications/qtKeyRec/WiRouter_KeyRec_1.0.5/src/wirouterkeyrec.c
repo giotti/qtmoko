@@ -36,7 +36,7 @@
 
 extern int errno;
 
-int main(int argc, char *argv[]) {
+int wirouterkeyrec(int argc, char *argv[]) {
 
     int debug   = 0,
         verbose = 0,

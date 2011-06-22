@@ -1,6 +1,5 @@
 #include <QtGui/QApplication>
 #include "qtKeyRec.h"
-#include "rotate.h"
 
 #ifdef QTOPIA
 #include <QtopiaServiceRequest>
