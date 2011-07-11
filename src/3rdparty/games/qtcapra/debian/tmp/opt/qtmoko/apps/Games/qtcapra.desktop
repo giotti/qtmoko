@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name[]=qtcapra
+Comment[]=A Sgarbi emulator
+Exec=qtcapra
+Terminal=false
+Type=Application
+Categories=Game;
+Icon=qtcapra/qtcapra
