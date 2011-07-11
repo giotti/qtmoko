@@ -7,6 +7,13 @@
 
 #include "rotate.h"
 
+#ifdef QTOPIA
+#include <QSoftMenuBar>
+#include <QtopiaApplication>
+#else
+#include <QCoreApplication>
+#endif
+
 namespace Ui {
     class QtCapra;
 }
@@ -16,7 +23,7 @@ class QtCapra : public QWidget
     Q_OBJECT
 
 public:
-    explicit QtCapra(QWidget *parent = 0);
+    QtCapra(QWidget *parent = 0, Qt::WFlags f = 0);
     ~QtCapra();
     QString program;
 

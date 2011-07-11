@@ -1,11 +1,8 @@
 [Desktop Entry]
+Name[]=qtcapra
 Comment[]=A Sgarbi emulator
 Exec=qtcapra
-Type=Games
-Name[]=qtcapra
+Terminal=false
+Type=Application
+Categories=Game;
 Icon=qtcapra/qtcapra
-MimeType=""
-MimeTypeIcons=""
-[Translation]
-File=QtopiaGames
-Context=qtcapra

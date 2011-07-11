@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Source: qtmoko
+=======
+Source: qtmoko-qgcide
+>>>>>>> 3a13030df31df1a07463969db768c0e3752da94a
 Section: comm
 Priority: optional
 Maintainer: Radek Polak <psonek2@seznam.cz>
@@ -8,7 +12,14 @@ Homepage: http://www.qtmoko.org
 Vcs-Git: git://github.com/radekp/qtmoko.git
 Vcs-Browser: https://github.com/radekp/qtmoko
 
+<<<<<<< HEAD
 Package: qtmoko
 Architecture: any
 Depends: 
 Description: QtMoko is phone environment
+=======
+Package: qtmoko-qgcide
+Architecture: any
+Depends: 
+Description: Offline English explanatory dictionary with more then 130000 words
+>>>>>>> 3a13030df31df1a07463969db768c0e3752da94a

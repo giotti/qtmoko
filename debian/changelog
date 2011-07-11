@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 qtmoko (35-1) unstable; urgency=low
 
   * Fix missing icon for qtmoko apps web
@@ -29,6 +30,9 @@ qtmoko (34-1) unstable; urgency=low
  -- Radek Polak <psonek2@seznam.cz>  Sat, 19 Mar 2011 10:23:56 +0100
 
 qtmoko (33-1) unstable; urgency=low
+=======
+qtmoko-qgcide (32-1) unstable; urgency=low
+>>>>>>> 3a13030df31df1a07463969db768c0e3752da94a
 
   * Initial release
 

@@ -1,17 +1,22 @@
 #!/usr/bin/make -f
 
+<<<<<<< HEAD
 CONFIGURE = $(PWD)/configure
 
 build:
 	mkdir -p ../build
 	cd ../build && "$(CONFIGURE)" -device neo -xplatform linux-native-g++ -remove-module pkgmanagement -languages cs_CZ,en_US,it_IT,ru_RU,de_DE,es_ES,pl_PL,da_DK,fr_FR -l dbus-1 -I /usr/include/dbus-1.0/ -I /usr/lib/dbus-1.0/include
 	cd ../build && make
+=======
+build:
+>>>>>>> 3a13030df31df1a07463969db768c0e3752da94a
 
 clean:
 	rm -rf debian/tmp
 	rm -f debian/files
 
 binary: build
+<<<<<<< HEAD
 	cd ../build && make install
 	mkdir -p debian/tmp/opt/qtmoko
 	cp -r ../build/image/* debian/tmp/opt/qtmoko
@@ -30,6 +35,17 @@ binary: build
 	dpkg-gencontrol
 	dh_installdeb -P debian/tmp
 	dh_installinit -P debian/tmp
+=======
+	../../../../../build/bin/qbuild packages
+	mkdir -p debian/tmp/opt/qtmoko
+	cd debian/tmp/opt/qtmoko && tar xzvpf ../../../../../../../../../build/src/3rdparty/applications/qgcide/pkg/*
+	cd debian/tmp/opt/qtmoko && tar xzvpf data.tar.gz
+	cd debian/tmp/opt/qtmoko && rm -f control
+	cd debian/tmp/opt/qtmoko && rm -f data.tar.gz
+	install -d debian/tmp/DEBIAN
+	dpkg-gencontrol
+	dh_installdeb -P debian/tmp
+>>>>>>> 3a13030df31df1a07463969db768c0e3752da94a
 	chown -R root:root debian/tmp/opt
 	chmod -R u+w,go=rX debian/tmp/opt
 	dpkg --build debian/tmp ..

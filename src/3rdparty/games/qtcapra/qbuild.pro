@@ -51,3 +51,9 @@ pics [
     path=/pics/qtcapra
 ]
 
+sounds [
+    hint=image
+    files=sounds/*.mp3
+    path=/sounds/qtcapra
+]
+
