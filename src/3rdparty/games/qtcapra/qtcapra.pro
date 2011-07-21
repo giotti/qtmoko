@@ -12,11 +12,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     qtcapra.cpp \
-    rotate.cpp
+    rotate.cpp \
+    mixerslider.cpp \
+    neocontrol.cpp
 
 HEADERS  += \
     qtcapra.h \
-    rotate.h
+    rotate.h \
+    mixerslider.h \
+    neocontrol.h
 
 FORMS    += \
     qtcapra.ui

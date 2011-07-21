@@ -14,9 +14,9 @@
 #include <QApplication>
 #include <QMouseEvent>
 #include <QMessageBox>
-#include <QHttp>
-#include <QTcpServer>
-#include <QTcpSocket>
+//#include <QHttp>
+//#include <QTcpServer>
+//#include <QTcpSocket>
 #include <QTextCodec>
 #include <QLineEdit>
 #include <QTimer>
