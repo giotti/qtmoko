@@ -1,7 +1,7 @@
 #include "./qtcapra.h"
 #include "./ui_qtcapra.h"
 
-QtCapra::QtCapra(QWidget *parent, Qt::WFlags f)
+QtCapra::QtCapra(QWidget *parent)
 : QWidget(parent),
     ui(new Ui::QtCapra) {
     ui->setupUi(this);
@@ -30,6 +30,6 @@ void QtCapra::on_quitButton_clicked()
 void QtCapra::on_startButton_clicked()
 {
     //QString command = "/usr/bin/mplayer -volume " + QString::number(_volume) + " /opt/qtmoko/sounds/" + _insulto + ".wav";
-    QString command = "/usr/bin/mpg123 /opt/qtmoko/sounds/qtcapra/" + _insulto + ".mp3";
+    QString command = "/usr/bin/mpg123 /opt/qtmoko/sounds/" + _insulto + ".mp3";
     system(qPrintable(command));
 }

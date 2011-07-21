@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Cross compling from sources
 ===========================
 
@@ -109,9 +108,3 @@ You can only develop GPL licensed applications using the Qt Extended Open Source
 For questions regarding licensing terms, email qt-sales@nokia.com.
 
 Copyright C 2009 Trolltech ASA
-=======
-Qgcide is simple english explanatory dictionary frontent which uses database
-from GCIDE project http://www.ibiblio.org/webster/
-
-Dictionary will be downloaded when programs starts up.
->>>>>>> 3a13030df31df1a07463969db768c0e3752da94a
