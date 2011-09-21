@@ -1,9 +1,0 @@
-Package: qtmoko-qtcapra
-Version: 34
-Architecture: amd64
-Maintainer: giotti <@>
-Installed-Size: 240
-Section: comm
-Priority: optional
-Homepage: http://www.qtmoko.org
-Description: A Vittorio Sgarbi emulato.

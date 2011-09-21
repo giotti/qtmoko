@@ -1,0 +1,9 @@
+Package: qtmoko-cutepairs
+Version: 32-1
+Architecture: amd64
+Maintainer: giotti <@>
+Installed-Size: 432
+Section: comm
+Priority: optional
+Homepage: http://www.qtmoko.org
+Description: A pairs game

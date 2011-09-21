@@ -1,0 +1,4 @@
+Project /src/3rdparty/games/CutePairs/ is normally disabled. (Disabling project because it is not listed in PROJECTS)
+moc /home/jack/GIT/qtmoko/src/3rdparty/games/CutePairs/main.cpp
+arm-linux-g++ /home/jack/GIT/qtmoko/src/3rdparty/games/CutePairs/main.cpp
+arm-linux-g++ /home/jack/GIT/build/src/3rdparty/games/CutePairs/cutepairs
