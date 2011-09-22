@@ -2,7 +2,7 @@ Package: qt-pairs-1.0
 Version: 32-1
 Architecture: amd64
 Maintainer: giotti <@>
-Installed-Size: 1128
+Installed-Size: 1100
 Section: comm
 Priority: optional
 Homepage: http://www.qtmoko.org
