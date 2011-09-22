@@ -57,7 +57,7 @@ int main(int iArgc, char* psArgv[])
     QTranslator* pTranslator = new QTranslator(0);
     pTranslator->load(sQmFile, ".");
     MyProgramme.installTranslator(pTranslator);
-    MainWindow.LanguageChangeSlot();
+    //MainWindow.LanguageChangeSlot();
 
     MainWindow.show();
     return MyProgramme.exec();

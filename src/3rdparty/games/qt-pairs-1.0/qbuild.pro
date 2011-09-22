@@ -22,18 +22,14 @@ pkg [
 
 HEADERS=\
     TBlock.h\
-    TChampion.h\
     TGameBoard.h\
-    TMainForm.h\
-    TStatisticsForm.h
+    TMainForm.h
 
 SOURCES=\
     main.cpp\
     TBlock.cpp\
-    TChampion.cpp\
     TGameBoard.cpp\
-    TMainForm.cpp\
-    TStatisticsForm.cpp
+    TMainForm.cpp
 
 RESOURCES += qt-pairs.qrc
 TRANSLATIONS += translations/qt-pairs_en.ts

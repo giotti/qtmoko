@@ -23,7 +23,6 @@ along with this programme.  */
 #include <QMainWindow>
 #include <QList>
 //------------------------------------------------------------
-#include "TChampion.h"
 //------------------------------------------------------------
 class QAction;
 class QActionGroup;
@@ -31,7 +30,6 @@ class QDomElement;
 class QLabel;
 class QMenu;
 class QTimer;
-class QToolBar;
 class TGameBoard;
 //------------------------------------------------------------
 class TMainForm : public QMainWindow
@@ -46,54 +44,33 @@ public:
 private:
     TGameBoard* pCentralWidget;
 
-    QList<TChampion> Scores; // Рекорды.
-
     QTimer* pTimer;
     QLabel* pDateTimeLabel;
     QLabel* pMovesLabel;
 
     QAction* pGameExitAction;
     QAction* pGameNewAction;
-    QAction* pToolsStatisticsAction;
-    QAction* pToolsSaveSettingsAction;
-    QActionGroup* pLanguageActions;
     QAction* pAboutAction;
     QAction* pAboutQtAction;
 
     QMenu* pGameMenu;
-    QMenu* pToolsMenu;
-    QMenu* pLanguageMenu;
     QMenu* pAboutMenu;
-
-    QToolBar* pGameToolBar;
-    QToolBar* pToolsToolBar;
-    QToolBar* pAboutToolBar;
 
     void Initialise();
     void CreateActions();
     void CreateMenus();
-    void CreateToolBar();
     void CreateStatusBar();
-    void CreateLanguageMenu();
     void LoadSettings();
     void ParseBars(QDomElement&);
-    void LoadScores();
-    //QString sAddChampion();
-    //void WriteScores(int);
 
 public slots:
-    void LanguageChangeSlot();
 
 private slots:
     void TimeSlot();
     void GameNewSlot();
-    void ToolsStatisticsSlot();
-    void ToolsSaveSettingsSlot();
     void AboutSlot();
     void AboutQtSlot();
-    void SwitchLanguageSlot(QAction*);
     void NewMoveSlot(int);
-    void ClearStatisticsSlot();
     void GameFinishedSlot();
 };
 //------------------------------------------------------------
