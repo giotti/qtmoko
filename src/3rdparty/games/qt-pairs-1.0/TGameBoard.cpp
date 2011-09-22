@@ -60,6 +60,8 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     }
     pMainLayout->setSizeConstraint(QLayout::SetNoConstraint);
 
+    connect(this, SIGNAL(GameFinished()), this, SLOT(close()));
+
     this->iSelected = 0;
     this->pFirstOfPair = NULL;
     this->pSecondOfPair = NULL;

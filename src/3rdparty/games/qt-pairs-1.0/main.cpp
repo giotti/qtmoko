@@ -17,15 +17,11 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this programme.  */
 //------------------------------------------------------------
-#include "TMainForm.h"
+#include "TGameBoard.h"
 //------------------------------------------------------------
 //#include <QApplication>
 #include <QtGui/QApplication>
-#include <QLocale>
-#include <QFileInfo>
 #include <QMessageBox>
-#include <QTextCodec>
-#include <QTranslator>
 //------------------------------------------------------------
 #ifdef QTOPIA
 #include <QtopiaServiceRequest>
@@ -34,32 +30,12 @@ along with this programme.  */
 //------------------------------------------------------------
 int main(int iArgc, char* psArgv[])
 {
-    QApplication MyProgramme(iArgc, psArgv);
-    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
-    TMainForm MainWindow;
-    QString sLocale = MainWindow.sLocale;
+    QApplication application(iArgc, psArgv);
 
-    QLocale Locale;
-    if(sLocale.isEmpty()) 
-    {
-        sLocale = Locale.system().name();
-        sLocale.truncate(2);
-        MainWindow.sLocale = sLocale;
-    }
+    TGameBoard gameBoard;
 
-    QString sQmFile = QString("qt-pairs_" + sLocale + ".qm");
-    QString sQmPath = MyProgramme.applicationDirPath() + "/translations";
-    sQmFile = sQmPath + "/" + sQmFile;
+    gameBoard.show();
 
-    QFileInfo QmFileInfo(sQmFile);
-    sLocale = "en";
-
-    QTranslator* pTranslator = new QTranslator(0);
-    pTranslator->load(sQmFile, ".");
-    MyProgramme.installTranslator(pTranslator);
-    //MainWindow.LanguageChangeSlot();
-
-    MainWindow.show();
-    return MyProgramme.exec();
+    return application.exec();
 }
 //------------------------------------------------------------
