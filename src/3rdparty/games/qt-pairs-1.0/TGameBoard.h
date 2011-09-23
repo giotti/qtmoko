@@ -21,6 +21,7 @@ along with this programme.  */
 #define _TGameBoard_h_
 //-----------------------------------------------------------
 #include <QWidget>
+#include <QVBoxLayout>
 //-----------------------------------------------------------
 class QGridLayout;
 class QTimer;
@@ -50,12 +51,17 @@ private:
     TBlock* pSecondOfPair;
     int iSelected;
 
-    QGridLayout* pMainLayout;
+    QGridLayout* pGridLayout;
+    QVBoxLayout* pMainLayout;
 
     void SetPositions();
+    void initMenu();
 
 private slots:
     void ClickedBlockSlot(int, int);
+
+protected slots:
+    void initGame();
 };
 //-----------------------------------------------------------
 #endif

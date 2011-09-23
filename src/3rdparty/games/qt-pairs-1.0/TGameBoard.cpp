@@ -21,6 +21,7 @@ along with this programme.  */
 #include "TBlock.h"
 //-----------------------------------------------------------
 #include <QtGui>
+#include <QMenu>
 //-----------------------------------------------------------
 #include <ctime>
 //-----------------------------------------------------------
@@ -34,10 +35,46 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     : QWidget(pParent, Flag)
 {
     srand(time(NULL));
-    this->SetPositions();
 
-    pMainLayout = new QGridLayout(this);
-    pMainLayout->setSpacing(3);
+    pMainLayout = new QVBoxLayout(this);
+
+    //comment this to disable menus
+    initMenu();
+
+    pGridLayout = new QGridLayout();
+    pGridLayout->setSpacing(3);
+
+    pMainLayout->addLayout(pGridLayout);
+
+    //--- connections
+    connect(this,   SIGNAL(GameFinished()),   this,   SLOT(close()));
+    connect(this,   SIGNAL(NewGame()),        this,   SLOT(initGame()));
+
+    initGame();
+}
+//-----------------------------------------------------------
+void TGameBoard::initMenu()
+{
+    QMenuBar* menuBar = new QMenuBar(this);
+
+    //----- Menu -----
+    QMenu* fileMenu = new QMenu("File", menuBar);
+    menuBar->addMenu(fileMenu);
+
+    QAction* exitAction = new QAction("Exit",this);
+    fileMenu->addAction(exitAction);
+    connect( exitAction, SIGNAL(triggered()), this, SLOT(close()) );
+
+    QMenu* optionMenu = new QMenu("Options", menuBar);
+    menuBar->addMenu(optionMenu);
+
+    pMainLayout->addWidget(menuBar);
+}
+
+//-----------------------------------------------------------
+void TGameBoard::initGame()
+{
+    this->SetPositions();
 
     int iBlocks = 0;
     for(int i = 0; i < 4; i++)
@@ -48,7 +85,7 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
             pBlocksArray[i][j] = pBlock;
             pBlock->setFrameStyle(QFrame::Panel | QFrame::Raised);
             pBlock->setLineWidth(3);
-            pMainLayout->addWidget(pBlock, i, j);
+            pGridLayout->addWidget(pBlock, i, j);
             connect(pBlock, SIGNAL(clicked(int, int)), this, SLOT(ClickedBlockSlot(int, int)));
             pBlock->iRow = i;
             pBlock->iCol = j;
@@ -58,11 +95,15 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
             iBlocks++;
         }
     }
+<<<<<<< HEAD
     //pMainLayout->setSizeConstraint([>QLayout::SetNoConstraint<]QLayout::SetMaximumSize);
     pMainLayout->setSizeConstraint(QLayout::SetNoConstraint);
 
 
     connect(this, SIGNAL(GameFinished()), this, SLOT(close()));
+=======
+    pGridLayout->setSizeConstraint(QLayout::SetNoConstraint);
+>>>>>>> 7ff8105... qt-pairs: added menu, fixed minor bugs
 
     this->iSelected = 0;
     this->pFirstOfPair = NULL;
@@ -70,6 +111,7 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     this->iFreeCells = 8;
     this->iMoves = 0;
 }
+
 //-----------------------------------------------------------
 void TGameBoard::SetPositions()
 {
@@ -118,13 +160,13 @@ void TGameBoard::ClickedBlockSlot(int iRow, int iCol)
                 if(iCounter >= 100) break;
                 this->pSecondOfPair->show();
                 this->pSecondOfPair->repaint();
-                Delay(3000);
+                Delay(8000);
             #endif
             #if !defined(Q_WS_X11)
                 if(iCounter >= 2) break;
                 this->pSecondOfPair->show();
                 this->pSecondOfPair->repaint();
-                Delay(500);
+                Delay(1500);
             #endif
             iCounter++;
         }
@@ -140,7 +182,7 @@ void TGameBoard::ClickedBlockSlot(int iRow, int iCol)
                 int iAnswer = QMessageBox::information(this, tr("Victory!"), sScores, QMessageBox::Yes, QMessageBox::No);
                 if(iAnswer == QMessageBox::Yes)
                 {
-                    emit GameFinished();
+                    //emit GameFinished();
                     emit NewGame();
                 }
                 else emit GameFinished();
