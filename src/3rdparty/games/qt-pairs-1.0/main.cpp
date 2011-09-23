@@ -26,8 +26,11 @@ along with this programme.  */
 #ifdef QTOPIA
 #include <QtopiaServiceRequest>
 #include <QValueSpaceItem>
-#endif
-//------------------------------------------------------------
+#include <qtopiaapplication.h>
+
+QTOPIA_ADD_APPLICATION(QTOPIA_TARGET,TGameBoard)
+QTOPIA_MAIN
+#else
 int main(int iArgc, char* psArgv[])
 {
     QApplication application(iArgc, psArgv);
@@ -38,4 +41,4 @@ int main(int iArgc, char* psArgv[])
 
     return application.exec();
 }
-//------------------------------------------------------------
+#endif
