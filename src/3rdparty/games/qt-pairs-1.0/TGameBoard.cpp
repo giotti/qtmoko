@@ -58,7 +58,8 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
             iBlocks++;
         }
     }
-    pMainLayout->setSizeConstraint(/*QLayout::SetNoConstraint*/QLayout::SetMaximumSize);
+    //pMainLayout->setSizeConstraint([>QLayout::SetNoConstraint<]QLayout::SetMaximumSize);
+    pMainLayout->setSizeConstraint(QLayout::SetNoConstraint);
 
 
     connect(this, SIGNAL(GameFinished()), this, SLOT(close()));
