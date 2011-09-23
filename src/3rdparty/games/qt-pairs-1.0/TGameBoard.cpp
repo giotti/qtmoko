@@ -22,6 +22,7 @@ along with this programme.  */
 //-----------------------------------------------------------
 #include <QtGui>
 #include <QMenu>
+#include <qsoftmenubar.h>
 //-----------------------------------------------------------
 #include <ctime>
 //-----------------------------------------------------------
@@ -46,9 +47,15 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
 
     pMainLayout->addLayout(pGridLayout);
 
+    //QSoftMenuBar::setLabel(field, Qt::Key_Select, QSoftMenuBar::Select);
+    QMenu *contextMenu = QSoftMenuBar::menuFor(this);
+    contextMenu->addAction( QIcon(":image/dead"), tr( "Quit" ),
+                            this, SLOT(close()) );
+    contextMenu->addAction( QIcon(":image/dead"), tr( "NewGame" ),
+                            this, SLOT(initGame()) );
     //--- connections
-    connect(this,   SIGNAL(GameFinished()),   this,   SLOT(close()));
-    connect(this,   SIGNAL(NewGame()),        this,   SLOT(initGame()));
+    //connect(this,   SIGNAL(GameFinished()),   this,   SLOT(close()));
+    //connect(this,   SIGNAL(NewGame()),        this,   SLOT(initGame()));
 
     initGame();
 }
