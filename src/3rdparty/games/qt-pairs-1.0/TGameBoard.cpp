@@ -95,15 +95,7 @@ void TGameBoard::initGame()
             iBlocks++;
         }
     }
-<<<<<<< HEAD
-    //pMainLayout->setSizeConstraint([>QLayout::SetNoConstraint<]QLayout::SetMaximumSize);
-    pMainLayout->setSizeConstraint(QLayout::SetNoConstraint);
-
-
-    connect(this, SIGNAL(GameFinished()), this, SLOT(close()));
-=======
     pGridLayout->setSizeConstraint(QLayout::SetNoConstraint);
->>>>>>> 7ff8105... qt-pairs: added menu, fixed minor bugs
 
     this->iSelected = 0;
     this->pFirstOfPair = NULL;
