@@ -1,0 +1,33 @@
+Breve descrizione di ciò che è possibile fare:
+
++----------------------------+
+| Compilazione               |
++----------------------------+
+Requisiti:
+	* librerie Qt 4.4.0
+	* modulo Qt sqlite 3
+
+Comandi:
+	qmake
+	make
+	make install
+	
+oppure:
+	
+	mkdir build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+	make
+	make install
+
++----------------------------+
+| Licenza                    |
++----------------------------+
+Leggere il file gpl-3.0.txt
+
+
++----------------------------+
+| Gli autori                 |
++----------------------------+
+	* Francesco Betti Sorbelli - montoya83@gmail.com
+	* Roberto Ciotti - ciotti.roberto@gmail.com

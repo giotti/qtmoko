@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment[]=A briscola game
+Exec=qbriscola
+Type=Games
+Name[]=qbriscola
+Icon=qbriscola/qbriscola
+MimeType=""
+MimeTypeIcons=""
+[Translation]
+File=QtopiaGames
+Context=qbriscola

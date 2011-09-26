@@ -1,0 +1,316 @@
+In file included from /home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_finestra.cpp:10:
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/../../../../../../qtmoko/src/3rdparty/games/qbriscola/src/finestra.h:45: error: expected class-name before ‘{’ token
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_finestra.cpp: In member function ‘virtual void* Finestra::qt_metacast(const char*)’:
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_finestra.cpp:72: error: expected type-specifier
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_finestra.cpp:72: error: expected `>'
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_finestra.cpp:72: error: expected `('
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_finestra.cpp:72: error: ‘Finestra’ is not a member of ‘Ui’
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_finestra.cpp:72: error: expected primary-expression before ‘>’ token
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_finestra.cpp:72: error: expected `)' before ‘;’ token
+In file included from /home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/../../../../../../qtmoko/src/3rdparty/games/qbriscola/src/client.h:37,
+                 from /home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_client.cpp:10:
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/../../../../../../qtmoko/src/3rdparty/games/qbriscola/src/finestra.h:45: error: expected class-name before ‘{’ token
+In file included from /home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_client.cpp:10:
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/../../../../../../qtmoko/src/3rdparty/games/qbriscola/src/client.h:42: error: expected class-name before ‘{’ token
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_client.cpp: In member function ‘virtual void* Client::qt_metacast(const char*)’:
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_client.cpp:66: error: expected type-specifier
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_client.cpp:66: error: expected `>'
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_client.cpp:66: error: expected `('
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_client.cpp:66: error: ‘Finestra’ is not a member of ‘Ui’
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_client.cpp:66: error: expected primary-expression before ‘>’ token
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_client.cpp:66: error: expected `)' before ‘;’ token
+In file included from /home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/avvio.cpp:25:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.h:45: error: expected class-name before ‘{’ token
+In file included from /home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/avvio.cpp:26:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.h:42: error: expected class-name before ‘{’ token
+In file included from /home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/avvio.cpp:27:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.h:46: error: expected class-name before ‘{’ token
+In file included from /home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/../../../../../../qtmoko/src/3rdparty/games/qbriscola/src/server.h:41,
+                 from /home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_server.cpp:10:
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/../../../../../../qtmoko/src/3rdparty/games/qbriscola/src/finestra.h:45: error: expected class-name before ‘{’ token
+In file included from /home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_server.cpp:10:
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/../../../../../../qtmoko/src/3rdparty/games/qbriscola/src/server.h:46: error: expected class-name before ‘{’ token
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_server.cpp: In member function ‘virtual void* Server::qt_metacast(const char*)’:
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_server.cpp:69: error: expected type-specifier
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_server.cpp:69: error: expected `>'
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_server.cpp:69: error: expected `('
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_server.cpp:69: error: ‘Finestra’ is not a member of ‘Ui’
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_server.cpp:69: error: expected primary-expression before ‘>’ token
+/home/jack/GIT/build/src/3rdparty/games/qbriscola/.moc/moc_server.cpp:69: error: expected `)' before ‘;’ token
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/main.cpp:33:1: error: unterminated #else
+In file included from /home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:24:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.h:45: error: expected class-name before ‘{’ token
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In constructor ‘Finestra::Finestra(QSqlDatabase, QString, QWidget*)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:29: error: ‘setupUi’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:38: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:39: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:40: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:41: error: ‘actionEsci’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:42: error: ‘actionAbout’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:43: error: ‘actionStatistiche’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:44: error: ‘actionConfigura’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:53: error: ‘groupBoxG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:54: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:55: error: ‘labelG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:68: error: ‘lineEditPuntiG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:69: error: ‘lineEditPuntiG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::inizializzo()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:83: error: ‘labelBr’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:85: error: ‘setStatusTip’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::settaBriscola()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:124: error: ‘labelBr’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:126: error: ‘setStatusTip’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::settaNumCarte()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:133: error: ‘lineEditCar’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::gestisciTurno(int)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:154: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:156: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:158: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:161: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:163: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:165: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::giocataComputer(int)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:730: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:734: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:738: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:745: error: ‘labelG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::attivaRaccolta(int)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:792: error: ‘lineEditPuntiG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:796: error: ‘lineEditPuntiG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::settaIcone()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:837: error: ‘labelUltima’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:839: error: ‘labelUltima’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:845: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:847: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:854: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:856: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:863: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:865: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:871: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:873: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:876: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:878: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:881: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:883: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::gestisciUltimaMano()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:923: error: ‘labelBr’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:924: error: ‘labelUltima’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:926: error: ‘lineEditCar’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:931: error: ‘labelBr’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:932: error: ‘labelUltima’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:934: error: ‘lineEditCar’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:941: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:944: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:947: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:953: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:956: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:959: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:963: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:964: error: ‘labelG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:968: error: ‘lineEditPuntiG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:969: error: ‘lineEditCar’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::cliccataCarta1()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1051: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1052: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1053: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1060: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::cliccataCarta2()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1069: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1070: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1071: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1078: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::cliccataCarta3()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1087: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1088: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1089: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1096: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::riceviSegnaleRaccoltaG1()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1107: error: ‘lineEditPuntiG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1112: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1113: error: ‘labelG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp: In member function ‘void Finestra::riceviSegnaleRaccoltaG2()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1137: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1138: error: ‘labelG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.cpp:1151: error: ‘lineEditPuntiG2’ was not declared in this scope
+In file included from /home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.h:41,
+                 from /home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:24:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.h:45: error: expected class-name before ‘{’ token
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/main.cpp: In function ‘QWidget* create_avvio(QWidget*, Qt::WFlags)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/main.cpp:38: error: expected type-specifier before ‘avvio’
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/main.cpp:38: error: cannot convert ‘int*’ to ‘QWidget*’ in return
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/main.cpp:38: error: expected ‘;’ before ‘avvio’
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/main.cpp:38: error: ‘avvio’ was not declared in this scope
+In file included from /home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:24:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.h:46: error: expected class-name before ‘{’ token
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In constructor ‘Server::Server(QSqlDatabase, QString, int, QWidget*)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:29: error: ‘setupUi’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:56: error: ‘actionStatistiche’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:60: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:61: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:62: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::settaBriscola()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:73: error: ‘labelBr’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:75: error: ‘setStatusTip’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::personalizza()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:85: error: ‘groupBoxG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:86: error: ‘lineEditPuntiG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:87: error: ‘lineEditPuntiG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:88: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:89: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:90: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::iniziaPartita()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:128: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:134: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:140: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::gestisciTurno(int)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:162: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:163: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:164: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::settaNickClient(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:201: error: ‘groupBoxG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::clientCarta(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:213: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:215: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:217: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:223: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::settaNumCarte()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:232: error: ‘lineEditCar’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::attivaRaccolta(int)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:244: error: ‘lineEditPuntiG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:249: error: ‘lineEditPuntiG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::settaIcone()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:367: error: ‘labelUltima’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:369: error: ‘labelUltima’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:374: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:376: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:379: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:381: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:384: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:386: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:391: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:393: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:398: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:400: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:405: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:407: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::gestisciUltimaMano()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:417: error: ‘labelBr’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:418: error: ‘labelUltima’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:420: error: ‘lineEditCar’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:432: error: ‘labelBr’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:433: error: ‘labelUltima’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:435: error: ‘lineEditCar’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:448: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:451: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:454: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:460: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:463: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:466: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:470: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:471: error: ‘labelG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:475: error: ‘lineEditPuntiG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:476: error: ‘lineEditCar’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:492: error: ‘groupBoxG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::cliccataCarta1()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:510: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:512: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:513: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:518: error: ‘labelG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::cliccataCarta2()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:529: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:530: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:532: error: ‘pushButtonG2C3’ was not declared in this scope
+In file included from /home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.h:37,
+                 from /home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:24:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/finestra.h:45: error: expected class-name before ‘{’ token
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:537: error: ‘labelG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::cliccataCarta3()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:548: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:549: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:550: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:556: error: ‘labelG2’ was not declared in this scope
+In file included from /home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:24:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.h:42: error: expected class-name before ‘{’ token
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::riceviSegnaleRaccoltaG1()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:574: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:575: error: ‘labelG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:595: error: ‘lineEditPuntiG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In constructor ‘Client::Client(QSqlDatabase, QString, QString, int, QWidget*)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:29: error: ‘setupUi’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp: In member function ‘void Server::riceviSegnaleRaccoltaG2()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:603: error: ‘lineEditPuntiG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:608: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:46: error: ‘actionStatistiche’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:47: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:48: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:49: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/server.cpp:609: error: ‘labelG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::personalizza()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:94: error: ‘groupBoxG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:95: error: ‘lineEditPuntiG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:96: error: ‘lineEditPuntiG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:97: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:98: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:99: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::aggiustaMazzo(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:134: error: ‘labelUltima’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:136: error: ‘labelUltima’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::attivaColorazione(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:144: error: ‘lineEditPuntiG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:146: error: ‘lineEditPuntiG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::stabilisciVincitore(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:152: error: ‘lineEditPuntiG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:164: error: ‘groupBoxG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::disabilitaCarte(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:213: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:214: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:215: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::ultimaMano(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:220: error: ‘labelBr’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:221: error: ‘labelUltima’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:222: error: ‘lineEditCar’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::aggiornaPunti(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:227: error: ‘lineEditPuntiG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::pulisciTavolo(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:232: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:233: error: ‘labelG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:234: error: ‘lineEditPuntiG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:235: error: ‘lineEditPuntiG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::settaCartaServer(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:242: error: ‘labelG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:245: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:247: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:249: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::settaTurno(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:256: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:257: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:258: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::settaNumCarte(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:263: error: ‘lineEditCar’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::settaCarta(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:274: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:277: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:280: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:284: error: ‘pushButtonG2C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:286: error: ‘pushButtonG2C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:288: error: ‘pushButtonG2C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::settaBriscola(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:295: error: ‘labelBr’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:296: error: ‘setStatusTip’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::settaNickServer(QString)’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:301: error: ‘groupBoxG2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::cliccataCarta1()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:338: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:339: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:340: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:344: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::cliccataCarta2()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:352: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:353: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:354: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:358: error: ‘labelG1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp: In member function ‘void Client::cliccataCarta3()’:
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:366: error: ‘pushButtonG1C1’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:367: error: ‘pushButtonG1C2’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:368: error: ‘pushButtonG1C3’ was not declared in this scope
+/home/jack/GIT/qtmoko/src/3rdparty/games/qbriscola/src/client.cpp:372: error: ‘labelG1’ was not declared in this scope
