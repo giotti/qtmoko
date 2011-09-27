@@ -40,7 +40,7 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     pMainLayout = new QVBoxLayout(this);
 
     //comment this to disable menus
-    initMenu();
+    //initMenu();
 
     pGridLayout = new QGridLayout();
     pGridLayout->setSpacing(3);
@@ -54,7 +54,7 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     contextMenu->addAction( QIcon(":image/dead"), tr( "NewGame" ),
                             this, SLOT(initGame()) );
 
-    QMenu imagesMenu = new QMenu("ImageSet", this);
+    QMenu* imagesMenu = new QMenu("ImageSet", this);
 
     QAction* beerAction     = new QAction("Beer",this);
     beerAction->setCheckable(true);

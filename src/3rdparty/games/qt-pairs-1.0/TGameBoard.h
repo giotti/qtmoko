@@ -22,6 +22,7 @@ along with this programme.  */
 //-----------------------------------------------------------
 #include <QWidget>
 #include <QVBoxLayout>
+#include <QActionGroup>
 //-----------------------------------------------------------
 class QGridLayout;
 class QTimer;
