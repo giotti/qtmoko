@@ -39,7 +39,7 @@ public:
     void Shuffle();
 
     int iMoves;
-    QActionGroup* imageSetActions;
+    QActionGroup* imageSetActionsGroup;
 
 signals:
     void GameFinished();
@@ -57,7 +57,6 @@ private:
     QVBoxLayout* pMainLayout;
 
     void SetPositions();
-    void initMenu();
 
 private slots:
     void ClickedBlockSlot(int, int);

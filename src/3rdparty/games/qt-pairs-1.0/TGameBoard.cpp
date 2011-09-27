@@ -17,12 +17,18 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this programme.  */
 //------------------------------------------------------------
+//********comment to try without phone*******
+#define MOBILE
+//*******************************************
+
 #include "TGameBoard.h"
 #include "TBlock.h"
 //-----------------------------------------------------------
 #include <QtGui>
 #include <QMenu>
+#ifdef MOBILE
 #include <qsoftmenubar.h>
+#endif
 //-----------------------------------------------------------
 #include <ctime>
 //-----------------------------------------------------------
@@ -39,21 +45,42 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
 
     pMainLayout = new QVBoxLayout(this);
 
-    //comment this to disable menus
-    //initMenu();
-
+    //--- create game grid
     pGridLayout = new QGridLayout();
     pGridLayout->setSpacing(3);
 
-    pMainLayout->addLayout(pGridLayout);
 
+
+#ifdef MOBILE
     //QSoftMenuBar::setLabel(field, Qt::Key_Select, QSoftMenuBar::Select);
     QMenu *contextMenu = QSoftMenuBar::menuFor(this);
-    contextMenu->addAction( QIcon(":image/dead"), tr( "Quit" ),
-                            this, SLOT(close()) );
     contextMenu->addAction( QIcon(":image/dead"), tr( "NewGame" ),
                             this, SLOT(initGame()) );
+    contextMenu->addAction( QIcon(":image/dead"), tr( "Quit" ),
+                            this, SLOT(close()) );
+    contextMenu->addSeparator();
 
+    //--- create menu
+    QMenu* imagesMenu = new QMenu("ImageSet", this);
+
+    //--- create actions
+    QAction* beerAction     = new QAction("Beer",this);
+    beerAction->setCheckable(true);
+    QAction* puppetsAction  = new QAction("Puppets",this);
+    puppetsAction->setCheckable(true);
+
+    //--- set default image set
+    beerAction->setChecked(true);
+
+    imageSetActionsGroup = new QActionGroup(this);
+    imageSetActionsGroup->addAction(beerAction);
+    imageSetActionsGroup->addAction(puppetsAction);
+
+    imagesMenu->addActions( imageSetActionsGroup->actions() );   //FIXME: needed???
+
+    contextMenu->addMenu( imagesMenu );
+#else
+    //--- create menu
     QMenu* imagesMenu = new QMenu("ImageSet", this);
 
     QAction* beerAction     = new QAction("Beer",this);
@@ -61,11 +88,20 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     QAction* puppetsAction  = new QAction("Puppets",this);
     puppetsAction->setCheckable(true);
 
-    imageSetActions = new QActionGroup(this);
+    imageSetActionsGroup = new QActionGroup(this);
+    imageSetActionsGroup->addAction(beerAction);
+    imageSetActionsGroup->addAction(puppetsAction);
 
     beerAction->setChecked(true);
 
-    imagesMenu->addActions( imageSetActions->actions() );   //FIXME: needed???
+    imagesMenu->addActions( imageSetActionsGroup->actions() );   //FIXME: needed???
+
+    QMenuBar* menuBar = new QMenuBar(this);
+    menuBar->addMenu(imagesMenu);
+    pMainLayout->addWidget(menuBar);
+#endif
+
+    pMainLayout->addLayout(pGridLayout);
 
     //--- connections
     //connect(this,   SIGNAL(GameFinished()),   this,   SLOT(close()));
@@ -74,31 +110,12 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     initGame();
 }
 //-----------------------------------------------------------
-void TGameBoard::initMenu()
-{
-    QMenuBar* menuBar = new QMenuBar(this);
-
-    //----- Menu -----
-    QMenu* fileMenu = new QMenu("File", menuBar);
-    menuBar->addMenu(fileMenu);
-
-    QAction* exitAction = new QAction("Exit",this);
-    fileMenu->addAction(exitAction);
-    connect( exitAction, SIGNAL(triggered()), this, SLOT(close()) );
-
-    QMenu* optionMenu = new QMenu("Options", menuBar);
-    menuBar->addMenu(optionMenu);
-
-    pMainLayout->addWidget(menuBar);
-}
-
-//-----------------------------------------------------------
 void TGameBoard::initGame()
 {
     this->SetPositions();
 
     //find which image set to use
-    QString imageSet = imageSetActions->checkedAction()->text();
+    QString imageSet = imageSetActionsGroup->checkedAction()->text();
 
     int iBlocks = 0;
     for(int i = 0; i < 4; i++)
@@ -106,7 +123,7 @@ void TGameBoard::initGame()
         for(int j = 0; j < 4; j++)
         {
             TBlock* pBlock = new TBlock(this);
-            pBlock->SetImageSet("imageSet");  //TODO: read image set
+            pBlock->SetImageSet(imageSet);
             pBlocksArray[i][j] = pBlock;
             pBlock->setFrameStyle(QFrame::Panel | QFrame::Raised);
             pBlock->setLineWidth(3);
