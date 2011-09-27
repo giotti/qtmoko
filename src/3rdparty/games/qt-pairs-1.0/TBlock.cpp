@@ -37,46 +37,49 @@ TBlock::TBlock(QWidget* pParent) :
 void TBlock::SetImage()
 {
     QString sImage;
+
+    QString imagedir = ":/images/" + ImageSet + "/";
+
     switch(this->iNumber)
     {
         case 0:
         {
-            sImage = ":/images/0.png";
+            sImage = imagedir + "0.png";
             break;
         }
         case 1:
         {
-            sImage = ":/images/1.png";
+            sImage = imagedir + "1.png";
             break;
         }
         case 2:
         {
-            sImage = ":/images/2.png";
+            sImage = imagedir + "2.png";
             break;
         }
         case 3:
         {
-            sImage = ":/images/3.png";
+            sImage = imagedir + "3.png";
             break;
         }
         case 4:
         {
-            sImage = ":/images/4.png";
+            sImage = imagedir + "4.png";
             break;
         }
         case 5:
         {
-            sImage = ":/images/5.png";
+            sImage = imagedir + "5.png";
             break;
         }
         case 6:
         {
-            sImage = ":/images/6.png";
+            sImage = imagedir + "6.png";
             break;
         }
         case 7:
         {
-            sImage = ":/images/7.png";
+            sImage = imagedir + "7.png";
             break;
         }
     }

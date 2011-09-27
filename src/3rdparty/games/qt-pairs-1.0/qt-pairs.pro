@@ -4,8 +4,7 @@ HEADERS += TBlock.h \
 #   TMainForm.h
 
 SOURCES += TBlock.cpp \
-    TGameBoard.cpp \
-    main.cpp
+    TGameBoard.cpp
 
  #\
  #   TMainForm.cpp

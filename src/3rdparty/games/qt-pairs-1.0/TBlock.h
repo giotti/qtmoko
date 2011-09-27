@@ -39,8 +39,10 @@ public:
     bool bIsOpened;
     QPixmap Background;
     QPixmap Image;
+    QString ImageSet;   //store pics directory name
 
     void SetImage();
+    void SetImageSet(QString s) { ImageSet = s; };
 
 signals:
     void clicked(int, int);

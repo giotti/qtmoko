@@ -53,6 +53,20 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
                             this, SLOT(close()) );
     contextMenu->addAction( QIcon(":image/dead"), tr( "NewGame" ),
                             this, SLOT(initGame()) );
+
+    QMenu imagesMenu = new QMenu("ImageSet", this);
+
+    QAction* beerAction     = new QAction("Beer",this);
+    beerAction->setCheckable(true);
+    QAction* puppetsAction  = new QAction("Puppets",this);
+    puppetsAction->setCheckable(true);
+
+    imageSetActions = new QActionGroup(this);
+
+    beerAction->setChecked(true);
+
+    imagesMenu->addActions( imageSetActions->actions() );   //FIXME: needed???
+
     //--- connections
     //connect(this,   SIGNAL(GameFinished()),   this,   SLOT(close()));
     //connect(this,   SIGNAL(NewGame()),        this,   SLOT(initGame()));
@@ -83,12 +97,16 @@ void TGameBoard::initGame()
 {
     this->SetPositions();
 
+    //find which image set to use
+    QString imageSet = imageSetActions->checkedAction()->text();
+
     int iBlocks = 0;
     for(int i = 0; i < 4; i++)
     {
         for(int j = 0; j < 4; j++)
         {
             TBlock* pBlock = new TBlock(this);
+            pBlock->SetImageSet("imageSet");  //TODO: read image set
             pBlocksArray[i][j] = pBlock;
             pBlock->setFrameStyle(QFrame::Panel | QFrame::Raised);
             pBlock->setLineWidth(3);
@@ -218,3 +236,5 @@ void TGameBoard::Shuffle()
     this->iMoves = 0;
 }
 //-----------------------------------------------------------
+
+

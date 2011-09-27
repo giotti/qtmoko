@@ -38,6 +38,7 @@ public:
     void Shuffle();
 
     int iMoves;
+    QActionGroup* imageSetActions;
 
 signals:
     void GameFinished();
