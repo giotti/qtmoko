@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with this programme.  */
 //------------------------------------------------------------
 //********comment to try without phone*******
-//#define MOBILE
+#define MOBILE
 //*******************************************
 
 #include "TGameBoard.h"
@@ -69,6 +69,8 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     //--- create actions
     QAction* beerAction     = new QAction("Beer",this);
     beerAction->setCheckable(true);
+    QAction* softwareAction     = new QAction("Software",this);
+    softwareAction->setCheckable(true);
     QAction* puppetsAction  = new QAction("Puppets",this);
     puppetsAction->setCheckable(true);
     QAction* titsAction  = new QAction("Tits",this);
@@ -79,6 +81,7 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
 
     imageSetActionsGroup = new QActionGroup(this);
     imageSetActionsGroup->addAction(beerAction);
+    imageSetActionsGroup->addAction(softwareAction);
     imageSetActionsGroup->addAction(puppetsAction);
     imageSetActionsGroup->addAction(titsAction);
 
@@ -104,6 +107,8 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
 
     QAction* beerAction     = new QAction("Beer",this);
     beerAction->setCheckable(true);
+    QAction* softwareAction     = new QAction("Software",this);
+    softwareAction->setCheckable(true);
     QAction* puppetsAction  = new QAction("Puppets",this);
     puppetsAction->setCheckable(true);
     QAction* titsAction  = new QAction("Tits",this);
@@ -111,6 +116,7 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
 
     imageSetActionsGroup = new QActionGroup(this);
     imageSetActionsGroup->addAction(beerAction);
+    imageSetActionsGroup->addAction(softwareAction);
     imageSetActionsGroup->addAction(puppetsAction);
     imageSetActionsGroup->addAction(titsAction);
 
