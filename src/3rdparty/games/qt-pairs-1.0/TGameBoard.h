@@ -63,7 +63,7 @@ private slots:
 
 protected slots:
     void initGame();
-    void changedImageSetInfo();
+    void changedImageSetInfo(QAction*);
 };
 //-----------------------------------------------------------
 #endif

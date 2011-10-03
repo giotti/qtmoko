@@ -152,7 +152,7 @@ void TGameBoard::initGame()
             pBlock->setFrameStyle(QFrame::Panel | QFrame::Raised);
             pBlock->setLineWidth(3);
             pGridLayout->addWidget(pBlock, i, j);
-            connect(pBlock, SIGNAL(clicked(in ( QAction * actiont, int)), this, SLOT(ClickedBlockSlot(int, int)));
+            connect(pBlock, SIGNAL(clicked(int, int)), this, SLOT(ClickedBlockSlot(int, int)));
             pBlock->iRow = i;
             pBlock->iCol = j;
             if(iPositions[iBlocks] <= 7) pBlock->iNumber = iPositions[iBlocks];
