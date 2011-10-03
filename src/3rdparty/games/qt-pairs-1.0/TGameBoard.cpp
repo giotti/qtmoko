@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with this programme.  */
 //------------------------------------------------------------
 //********comment to try without phone*******
-#define MOBILE
+//#define MOBILE
 //*******************************************
 
 #include "TGameBoard.h"
@@ -82,6 +82,8 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     imageSetActionsGroup->addAction(puppetsAction);
     imageSetActionsGroup->addAction(titsAction);
 
+    connect( imageSetActionsGroup, SIGNAL(triggered(QAction*)), this, SLOT(changedImageSetInfo(QAction*)));
+
     imagesMenu->addActions( imageSetActionsGroup->actions() );   //FIXME: needed???
 
     contextMenu->addMenu( imagesMenu );
@@ -116,6 +118,8 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
 
     imagesMenu->addActions( imageSetActionsGroup->actions() );   //FIXME: needed???
 
+    connect( imageSetActionsGroup, SIGNAL(triggered(QAction*)), this, SLOT(changedImageSetInfo(QAction*)));
+
     QMenuBar* menuBar = new QMenuBar(this);
     menuBar->addMenu(fileMenu);
     menuBar->addMenu(imagesMenu);
@@ -148,7 +152,7 @@ void TGameBoard::initGame()
             pBlock->setFrameStyle(QFrame::Panel | QFrame::Raised);
             pBlock->setLineWidth(3);
             pGridLayout->addWidget(pBlock, i, j);
-            connect(pBlock, SIGNAL(clicked(int, int)), this, SLOT(ClickedBlockSlot(int, int)));
+            connect(pBlock, SIGNAL(clicked(in ( QAction * actiont, int)), this, SLOT(ClickedBlockSlot(int, int)));
             pBlock->iRow = i;
             pBlock->iCol = j;
             if(iPositions[iBlocks] <= 7) pBlock->iNumber = iPositions[iBlocks];
@@ -269,5 +273,17 @@ void TGameBoard::Shuffle()
     this->iMoves = 0;
 }
 //-----------------------------------------------------------
-
+void TGameBoard::changedImageSetInfo(QAction* act)
+{
+    if( act->text() == "Tits" )
+        QMessageBox::information(this,
+                                 tr("Info"),
+                                 "So you like tits, right? Start a new game to catch boobs!!!",
+                                 QMessageBox::Ok);
+    else
+        QMessageBox::information(this,
+                                 tr("Info"),
+                                 "Image set updated. Start a new game to try it.",
+                                 QMessageBox::Ok);
+}
 

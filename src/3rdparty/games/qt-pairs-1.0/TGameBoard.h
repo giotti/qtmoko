@@ -63,6 +63,7 @@ private slots:
 
 protected slots:
     void initGame();
+    void changedImageSetInfo();
 };
 //-----------------------------------------------------------
 #endif
