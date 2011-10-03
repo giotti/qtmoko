@@ -43,13 +43,16 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
 {
     srand(time(NULL));
 
+    //--- init blocks array
+    for( int i=0; i<4; i++ )
+        for(int j=0; j<4; j++)
+    pBlocksArray[i][j] = NULL;
+
     pMainLayout = new QVBoxLayout(this);
 
     //--- create game grid
     pGridLayout = new QGridLayout();
     pGridLayout->setSpacing(3);
-
-
 
 #ifdef MOBILE
     //QSoftMenuBar::setLabel(field, Qt::Key_Select, QSoftMenuBar::Select);
@@ -115,10 +118,6 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
 
     pMainLayout->addLayout(pGridLayout);
 
-    //--- connections
-    //connect(this,   SIGNAL(GameFinished()),   this,   SLOT(close()));
-    //connect(this,   SIGNAL(NewGame()),        this,   SLOT(initGame()));
-
     initGame();
 }
 //-----------------------------------------------------------
@@ -134,6 +133,9 @@ void TGameBoard::initGame()
     {
         for(int j = 0; j < 4; j++)
         {
+            if( pBlocksArray[i][j] )
+                delete pBlocksArray[i][j];
+
             TBlock* pBlock = new TBlock(this);
             pBlock->SetImageSet(imageSet);
             pBlocksArray[i][j] = pBlock;
