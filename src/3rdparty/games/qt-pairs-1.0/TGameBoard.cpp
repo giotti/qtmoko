@@ -81,6 +81,17 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     contextMenu->addMenu( imagesMenu );
 #else
     //--- create menu
+    QMenu* fileMenu = new QMenu("File", this);
+
+    QAction* newGameAction = new QAction("New Game",this);
+    connect(newGameAction, SIGNAL(triggered()), this, SLOT(initGame()));
+
+    QAction* exitAction = new QAction("Exit",this);
+    connect(exitAction, SIGNAL(triggered()), this, SLOT(close()));
+
+    fileMenu->addAction(newGameAction);
+    fileMenu->addAction(exitAction);
+
     QMenu* imagesMenu = new QMenu("ImageSet", this);
 
     QAction* beerAction     = new QAction("Beer",this);
@@ -97,6 +108,7 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     imagesMenu->addActions( imageSetActionsGroup->actions() );   //FIXME: needed???
 
     QMenuBar* menuBar = new QMenuBar(this);
+    menuBar->addMenu(fileMenu);
     menuBar->addMenu(imagesMenu);
     pMainLayout->addWidget(menuBar);
 #endif
