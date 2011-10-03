@@ -71,6 +71,8 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     beerAction->setCheckable(true);
     QAction* puppetsAction  = new QAction("Puppets",this);
     puppetsAction->setCheckable(true);
+    QAction* titsAction  = new QAction("Tits",this);
+    titsAction->setCheckable(true);
 
     //--- set default image set
     beerAction->setChecked(true);
@@ -78,6 +80,7 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     imageSetActionsGroup = new QActionGroup(this);
     imageSetActionsGroup->addAction(beerAction);
     imageSetActionsGroup->addAction(puppetsAction);
+    imageSetActionsGroup->addAction(titsAction);
 
     imagesMenu->addActions( imageSetActionsGroup->actions() );   //FIXME: needed???
 
@@ -101,10 +104,13 @@ TGameBoard::TGameBoard(QWidget* pParent, Qt::WindowFlags Flag)
     beerAction->setCheckable(true);
     QAction* puppetsAction  = new QAction("Puppets",this);
     puppetsAction->setCheckable(true);
+    QAction* titsAction  = new QAction("Tits",this);
+    titsAction->setCheckable(true);
 
     imageSetActionsGroup = new QActionGroup(this);
     imageSetActionsGroup->addAction(beerAction);
     imageSetActionsGroup->addAction(puppetsAction);
+    imageSetActionsGroup->addAction(titsAction);
 
     beerAction->setChecked(true);
 
