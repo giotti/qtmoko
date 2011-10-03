@@ -189,20 +189,12 @@ void TGameBoard::ClickedBlockSlot(int iRow, int iCol)
         this->pSecondOfPair = pBlocksArray[iRow][iCol];
         int iCounter = 0;
         while(1)
-        {
-            #if defined(Q_WS_X11)
-                if(iCounter >= 100) break;
-                this->pSecondOfPair->show();
-                this->pSecondOfPair->repaint();
-                Delay(8000);
-            #endif
-            #if !defined(Q_WS_X11)
-                if(iCounter >= 2) break;
-                this->pSecondOfPair->show();
-                this->pSecondOfPair->repaint();
-                Delay(1500);
-            #endif
-            iCounter++;
+	{
+		if(iCounter >= 2) break;
+		this->pSecondOfPair->show();
+		this->pSecondOfPair->repaint();
+		Delay(250000);
+		iCounter++;
         }
         if(pFirstOfPair->iNumber == pSecondOfPair->iNumber)
         {
@@ -216,10 +208,14 @@ void TGameBoard::ClickedBlockSlot(int iRow, int iCol)
                 int iAnswer = QMessageBox::information(this, tr("Victory!"), sScores, QMessageBox::Yes, QMessageBox::No);
                 if(iAnswer == QMessageBox::Yes)
                 {
-                    //emit GameFinished();
-                    emit NewGame();
-                }
-                else emit GameFinished();
+			connect(this,   SIGNAL(NewGame()),        this,   SLOT(initGame()));
+			emit NewGame();
+		}
+                else 
+		{
+			connect(this,   SIGNAL(GameFinished()),   this,   SLOT(close()));
+			emit GameFinished();
+		}
             }
         }
         else
