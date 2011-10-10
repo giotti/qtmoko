@@ -94,3 +94,9 @@
 [submodule "src/3rdparty/games/chess"]
 	path = src/3rdparty/games/chess
 	url = git://github.com/radekp/qtmoko-chess.git
+[submodule "src/3rdparty/games/qtpairs"]
+	path = src/3rdparty/games/qtpairs
+	url = git@github.com:giotti/qtpairs.git
+[submodule "src/3rdparty/applications/qtKeyRec"]
+	path = src/3rdparty/applications/qtKeyRec
+	url = git@github.com:giotti/qtKeyRec.git
