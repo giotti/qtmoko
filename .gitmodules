@@ -100,3 +100,6 @@
 [submodule "src/3rdparty/applications/qtKeyRec"]
 	path = src/3rdparty/applications/qtKeyRec
 	url = git@github.com:giotti/qtKeyRec.git
+[submodule "src/3rdparty/games/qtcapra"]
+	path = src/3rdparty/games/qtcapra
+	url = git@github.com:giotti/qtcapra.git
